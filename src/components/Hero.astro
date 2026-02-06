@@ -8,7 +8,7 @@ const stats = [
 ];
 ---
 
-<section class="hero relative min-h-screen flex items-center pt-[72px] overflow-hidden">
+<section class="hero relative flex flex-col items-center justify-center pt-[72px] pb-20 overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0 bg-black">
     <img src="/img/p26-retro.jpg" alt="Background" class="w-full h-full object-cover opacity-40 mix-blend-overlay" />
@@ -21,25 +21,75 @@ const stats = [
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-teal/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
   </div>
 
-  <div class="container relative z-10">
-    <div class="max-w-4xl mx-auto text-center mt-40 sm:mt-48 md:mt-80">
-      <!-- Title
-      <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-text-primary mb-6 tracking-tight">
-        <span class="block" data-animate="split-text">PROYECTO 26</span>
-      </h1>  -->
+  <div class="container relative z-10 w-full px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto text-center mt-8 sm:mt-12 md:mt-16">
+      <!-- Photo, Info, Location and Social Links Section -->
+      <div class="mb-12" data-animate="fade-up" data-delay="200">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 items-center">
+          <!-- Photo Section (1/3) -->
+          <div class="flex items-center justify-center order-first md:order-none">
+            <div class="flex-shrink-0">
+              <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden ring-4 ring-accent-coral/30">
+                <img
+                  src="/img/leosuarizzi.jpg"
+                  alt="Leonardo Squarizzi"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
-      <!-- Tagline 
-      <p class="hero-tagline text-xl sm:text-2xl md:text-3xl text-text-secondary mb-4" data-animate="fade-up" data-delay="200">
-        Changing the world with <span class="text-accent-coral font-semibold">small contributions</span>.
-      </p> -->
+          <!-- Info Section (2/3) -->
+          <div class="col-span-1 md:col-span-2 text-center md:text-left">
+            <h3 class="text-2xl md:text-3xl font-bold text-text-primary mb-1">
+              Leonaro 'Flaywint' Squarizzi
+            </h3>
+            <p class="text-accent-coral font-medium mb-3 text-sm">
+              Game Designer & Indie Dev
+            </p>
+            <p class="text-text-secondary mb-4 text-xs md:text-sm leading-relaxed text-justify">
+              Hi! I have a degree in Digital Games and Postgraduate Course in Games and Gamification. I've been diving deep into the creative side of game development by crafting game mechanics, designing engaging loops, and creating narratives. I also love to create some indie projects!
+            </p>
 
-      <!-- Description 
-      <p class="hero-description text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-10" data-animate="fade-up" data-delay="400">
-        We build open source tools for Web, Mobile, and Game Development that developers around the world love.
-      </p> -->
+            <!-- Location -->
+            <div class="flex items-center gap-2 text-text-muted mb-4 text-sm justify-center md:justify-start">
+              <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0"></i>
+              <span>Based in São Paulo, Brazil</span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-3 justify-center md:justify-start">
+              <a
+                href="https://www.linkedin.com/in/leonardo-squarizzi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="https://github.com/LeoSquarizzi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
+              >
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- CTAs -->
-      <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4 mb-16" data-animate="fade-up" data-delay="600">
+      <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4 mb-12" data-animate="fade-up" data-delay="400">
         <Button href="#projects" variant="primary" size="lg">
           Explore Projects
         </Button>
@@ -50,13 +100,13 @@ const stats = [
       </div>
 
       <!-- Stats -->
-      <div class="hero-stats flex flex-wrap items-center justify-center gap-8 sm:gap-16" data-animate="fade-up" data-delay="800">
+      <div class="hero-stats flex flex-wrap items-center justify-center gap-8 sm:gap-16" data-animate="fade-up" data-delay="600">
         {stats.map((stat, index) => (
-          <div class="text-center" data-animate="counter" data-delay={800 + index * 100}>
-            <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-text mb-1">
+          <div class="text-center" data-animate="counter" data-delay={600 + index * 100}>
+            <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold gradient-text mb-1">
               {stat.value}
             </div>
-            <div class="text-sm text-text-muted uppercase tracking-wide">
+            <div class="text-xs text-text-muted uppercase tracking-wide">
               {stat.label}
             </div>
           </div>
@@ -65,10 +115,6 @@ const stats = [
     </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <i data-lucide="chevron-down" class="w-6 h-6 text-text-muted"></i>
-  </div>
 </section>
 
 <style>

@@ -21,108 +21,64 @@ const connectLinks = [
 const socialLinks = [
   { href: 'https://github.com/proyecto26', icon: 'github', label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/leonardo-squarizzi', icon: 'linkedin', label: 'LinkedIn' },
+  { href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.', icon: 'mail', label: 'Email' },
 ];
 ---
 
 <footer class="bg-bg-secondary border-t border-border-default">
-  <div class="container py-16">
+  <div class="container pt-6 md:pt-8 pb-0">
     <!-- Top Section -->
-    <div class="flex flex-col lg:flex-row justify-between gap-12 mb-12">
+    <div class="flex flex-col lg:flex-row justify-between gap-6 md:gap-8 mb-4 md:mb-5">
       <!-- Logo & Tagline -->
       <div class="max-w-sm">
-        <a href="/" class="flex items-center gap-3 mb-4">
-          <img src="/img/pro26.png" alt="Proyecto 26" class="w-8 h-8 rounded-md" />
-          <span class="text-lg font-bold text-text-primary">Leonardo Squarizzi</span>
+        <a href="/" class="flex items-center gap-2 mb-1">
+          <img src="/img/pro26.png" alt="Proyecto 26" class="w-6 h-6 md:w-8 md:h-8 rounded-md" />
+          <span class="text-base md:text-lg font-bold text-text-primary">Leonardo Squarizzi</span>
         </a>
-        <p class="text-text-secondary text-base">
+        <p class="text-text-secondary text-sm md:text-base whitespace-nowrap">
           Nothing is more inspiring than creating something new.
         </p>
       </div>
 
-      <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-16">
-        <!-- Projects --><!-- 
-        <div>
-          
-          <h3 class="text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">
-            Projects
-          </h3>
-          <ul class="space-y-3">
-            {projectLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-text-secondary hover:text-text-primary transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>-->
-
-        <!-- Resources -->
-        <!--<div>
-          <h3 class="text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">
-            Resources
-          </h3>
-          <ul class="space-y-3">
-            {resourceLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-text-secondary hover:text-text-primary transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>-->
-
-        <!-- Connect -->
-        <div>
-          <h3 class="text-xs font-semibold uppercase tracking-wider text-text-muted mb-4">
-            Connect
-          </h3>
-          <ul class="space-y-3">
-            {connectLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  class="text-text-secondary hover:text-text-primary transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <!-- Connect Section -->
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">
+          Connect
+        </h3>
+        <ul class="space-y-2">
+          {connectLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                class="text-text-secondary text-sm hover:text-text-primary transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
 
     <!-- Bottom Section -->
-    <div class="pt-8 border-t border-border-default flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-text-muted text-sm">
-        &copy; {currentYear} Proyecto 26. Made with love in Colombia.
+    <div class="pt-3 md:pt-4 border-t border-border-default flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-text-muted text-xs md:text-sm">
+        &copy; {currentYear} Portfolio by Leonardo Squarizzi. All rights reserved.
       </p>
 
       <!-- Social Icons -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
         {socialLinks.map((link) => (
           <a
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10 rounded-full flex items-center justify-center text-text-muted hover:text-accent-teal hover:bg-bg-hover transition-all duration-200"
+            class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-text-muted hover:text-accent-teal hover:bg-bg-hover transition-all duration-200"
             aria-label={link.label}
           >
-            <i data-lucide={link.icon} class="w-5 h-5"></i>
+            <i data-lucide={link.icon} class="w-4 h-4 md:w-5 md:h-5"></i>
           </a>
         ))}
       </div>
