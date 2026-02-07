@@ -17,13 +17,19 @@ const navLinks = [
   { href: '/about', label: 'About', id: 'about' },
   { href: '/contact', label: 'Contact', id: 'contact' },
 ];
+
+const socialLinks = [
+  { href: 'https://www.linkedin.com/in/leonardo-squarizzi', icon: 'linkedin', label: 'LinkedIn' },
+  { href: 'https://github.com/proyecto26', icon: 'github', label: 'GitHub' },
+  { href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.', icon: 'mail', label: 'Email' },
+];
 ---
 
 <header class="header fixed top-0 left-0 right-0 z-header h-[72px] bg-bg-primary/80 backdrop-blur-custom border-b border-border-subtle transition-all duration-300">
   <div class="container h-full flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="logo-link flex items-center gap-3 group">
-      <img src="/img/pro26.png" alt="Proyecto 26" class="w-10 h-10 rounded-lg transition-all duration-300 group-hover:shadow-glow-coral group-hover:scale-105" />
+      <img src="/img/miniicon.jpg" alt="Proyecto 26" class="w-10 h-10 rounded-lg transition-all duration-300 group-hover:shadow-glow-coral group-hover:scale-105" />
       <span class="text-lg font-bold text-text-primary hidden sm:block">Leonardo Squarizzi</span>
     </a>
 
@@ -56,7 +62,7 @@ const navLinks = [
         <i class="w-5 h-5">🐉</i>
       </button>
 
-      <!-- GitHub Link -->
+      <!-- GitHub Link 
       <a
         href="https://github.com/proyecto26"
         target="_blank"
@@ -65,7 +71,24 @@ const navLinks = [
       >
         <i data-lucide="github" class="w-4 h-4"></i>
         <span class="text-sm font-medium">{starsDisplay}</span>
-      </a>
+      </a>-->
+
+      <!-- Contact Icons -->
+      <div class="hidden sm:flex items-center gap-2">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            title={link.label}
+            class="w-10 h-10 rounded-full bg-bg-hover border border-border-default flex items-center justify-center
+                  text-text-secondary hover:text-text-primary hover:border-accent-coral transition-all duration-200"
+          >
+            <i data-lucide={link.icon} class="w-5 h-5"></i>
+          </a>
+        ))}
+      </div>
 
       <!-- Mobile Menu Button -->
       <button

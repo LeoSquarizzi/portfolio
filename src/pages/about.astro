@@ -12,69 +12,6 @@ const skills = [
   { category: 'Languages', items: ['Portuguese', 'English'] },
 ];
 
-const timeline = [
-  {
-    year: '2015',
-    title: 'Founded Proyecto 26',
-    description: 'Started the journey of building open source tools for developers.',
-  },
-  {
-    year: '2016',
-    title: 'Roxy Fileman for Node.js',
-    description: 'Roxy Fileman, upload and manage files with Node.js!',
-  },
-  {
-    year: '2017',
-    title: 'Unity RestClient',
-    description: 'Created a promise-based REST client that became essential for Unity developers.',
-  },
-  {
-    year: '2018',
-    title: 'Kinetic Scrolling Plugin for Phaser Framework',
-    description: 'Add smooth physics based scrolling to your games',
-  },
-  {
-    year: '2018',
-    title: 'MyBot',
-    description: '🧠 Create chatbots easily with Bot Framework! 🤖',
-  },
-  {
-    year: '2019',
-    title: 'InAppBrowser for React Native and NativeScript',
-    description: 'Released the most popular InAppBrowser library for React Native and NativeScript.',
-  },
-  {
-    year: '2020',
-    title: 'MercadoPago for React Native (Enterprise)',
-    description: 'A native bridge to use Mercado Pago Mobile Checkout with React Native (Android & iOS) by using Java and Objective-C.',
-  },
-  {
-    year: '2020',
-    title: 'Web Components Era',
-    description: 'Launched Animatable Component and IonPhaser for modern web animations and game development.',
-  },
-  {
-    year: '2020',
-    title: 'Record Audio Button (Enterprise)',
-    description: 'Web Component built with Stencil.js for Recording Audio from Web using Web RTC and Mobile using native plugins, with a swipe gesture using Ionic Animations inspired by WhatsApp.',
-  },
-  {
-    year: '2020',
-    title: 'useDictionary',
-    description: 'A React useReducer() hook to use dictionaries (keys and values) 🔑',
-  },
-  {
-    year: '2025',
-    title: 'ProjectX Template',
-    description: 'A real-world event-driven Full-Stack TypeScript template designed for production-ready Temporal workflows. Features a modern monorepo setup with React Router v7, NestJS, TailwindCSS v4, Docker, and AI-first tooling.',
-  },
-  {
-    year: '2026',
-    title: '4,500+ GitHub Stars',
-    description: 'Our projects reached thousands of developers worldwide.',
-  },
-];
-
 const socialLinks = [
   { name: 'GitHub', icon: 'github', href: 'https://github.com/LeoSquarizzi' },
   { name: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/leonardo-squarizzi' },
@@ -181,23 +118,6 @@ const socialLinks = [
   </div>
     </section>
 
-    <!-- Mission Section 
-    <section class="py-16 bg-bg-secondary">
-      <div class="container">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6" data-animate="fade-up">
-            Our Mission
-          </h2>
-          <p class="text-xl text-text-secondary mb-8" data-animate="fade-up" data-delay="100">
-            "Changing the world with small contributions"
-          </p>
-          <p class="text-text-muted" data-animate="fade-up" data-delay="200">
-            Proyecto 26 believes the world changes through small, consistent contributions. We create open source tools not just to empower developers, but because we grow by sharing — teaching others teaches us. Every line of code shared freely is a seed planted in the global community. One contribution at a time.
-          </p>
-        </div>
-      </div>
-    </section>-->
-
     <!-- Skills Section -->
     <section class="py-16 bg-bg-primary">
       <div class="container">
@@ -223,40 +143,6 @@ const socialLinks = [
               </ul>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="py-16 bg-bg-secondary">
-      <div class="container">
-        <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
-          Our Journey
-        </h2>
-
-        <div class="max-w-3xl mx-auto">
-          <div class="relative">
-            <!-- Timeline line -->
-            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border-default md:-translate-x-1/2"></div>
-
-            {timeline.map((item, index) => (
-              <div
-                class={`relative flex items-start gap-6 mb-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                data-animate="fade-up"
-                data-delay={index * 100}
-              >
-                <!-- Year dot -->
-                <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-accent-coral rounded-full md:-translate-x-1/2 mt-2"></div>
-
-                <!-- Content -->
-                <div class={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                  <span class="text-accent-coral font-bold">{item.year}</span>
-                  <h3 class="text-xl font-semibold text-text-primary mt-1">{item.title}</h3>
-                  <p class="text-text-secondary mt-2">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -37,8 +37,15 @@ const services = [
 
 const games = [
   {
-    title: 'Tindin Metaverse',  //ninjadev
-    description: 'Tindin is metaverse developed to teach students of all years how to take care of they money and the importance of investment and good usage of the money.',
+    title: 'Tindin Metaverse',
+    subtitle: "Game Designer / Level Designer",
+    highlights: [
+      "Designed core systems and progression balance",
+      "Quest and reward design",
+      "City layout and district level design",
+      "Fast travel and navigation mechanics",
+      "UI feedback and onboarding flows"
+    ],
     tags: ['2D Multiplayer', 'Simulator', 'Phaser', 'Mobile', 'PC'],
     href: '/games/tindin',
     image: '/img/projects/tindin.png',
@@ -46,46 +53,85 @@ const games = [
   },
   {
     title: 'Investors Game', 
-    description: '.',
-    tags: ['2D', 'Manager', 'Mobile', 'PC'],
+    subtitle: "Lead Game Designer / Level Designer",
+    highlights: [
+      "Gameplay and economy design",
+      "Quest and item system design",
+      "Level design and city interaction flow",
+      "Implementation via Blockly logic"
+    ],
+    tags: ['2D Multiplayer', 'Manager', 'Mobile', 'PC'],
     href: '/games/tindin',
     image: '/img/projects/invest.png',
   },
   {
-    title: 'Literama',  
-    description: '.',
-    tags: ['2D', 'Adventure', 'Phaser', 'Mobile', 'PC'],
+    title: 'Literama',
+    subtitle: "Lead Game Designer",  
+    highlights: [
+      "Lead game design and team coordination",
+      "Level design and quest sequence",
+      "Gameflow adaptation and UX guidance"
+    ],
+    tags: ['2D Multiplayer', 'Adventure', 'Mobile', 'PC'],
     href: '/games/tindin',
     image: '/img/projects/literama.jpg',
   },
   {
-    title: 'Save the Boat',  
-    description: '.',
+    title: 'Save the Boat', 
+    subtitle: "Solo Developer",   
+    highlights: [
+      "Solo game design and development",
+      "Gameplay systems and enemy AI",
+      "Boss fight mechanics design"
+    ],    
     tags: ['2D', 'Arcade', 'Unity', 'Mobile'],
     href: '/games/tindin',
     image: '/img/projects/boat.png',
   },
+];
+
+/* 
   {
     title: 'Orbit Ball',  
-    description: '.',
+    subtitle: "Solo Developer",
+    highlights: [
+      "Casual game design case study",
+      "One-handed and accessible gameplay",
+      "Challenge and difficulty tuning"
+    ],
     tags: ['2D', 'Casual', 'Unity', 'Mobile'],
     href: '/games/tindin',
     image: '/img/projects/orbitball.jpg',
   },
   {
-    title: 'Rivals Showdown',  
-    description: '.',
+    title: 'Rivals Showdown',
+    subtitle: "Game Developer",  
+    highlights: [
+      "Core game design and mechanics",
+      "AI behavior and decision systems",
+      "Player formations and route logic"
+    ],    
     tags: ['3D', 'Sports', 'Unity', 'Mobile'],
     href: '/games/tindin',
     image: '/img/projects/gameday.png',
   },
   {
-    title: 'Everything Ends in Pizza',  
-    description: '.',
+    title: 'Everything Ends in Pizza',
+    subtitle: "Game Developer",
+    highlights: [
+      "Minigame mechanics design and balance",
+      "Gameplay programming in Unity",
+      "Asset management and documentation"
+    ],
     tags: ['2D', 'Runner', 'Unity', 'Mobile'],
     href: '/games/tindin',
     image: '/img/projects/pizza.png',
-  },
+  },*/
+
+const bulletskills = [
+  { category: 'Game Design & Development', items: ['Game design systems', 'Core mechanics', 'Level design', 'Gameplay balancing', 'Game progression'] },
+  { category: 'Game Engines & Programming', items: ['Unity', 'Construct', 'C#', 'SQL', 'Python'] },
+  { category: 'Workflow & Methodologies', items: ['Agile', 'Scrum', 'Kanban', 'Figma/Miro', 'Google Workspace'] },
 ];
 
 const supportLinks = [
@@ -108,16 +154,16 @@ const supportLinks = [
       <div class="container">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4" data-animate="fade-up">
-            Work & Projects
+            Selected Projects
           </h2>
           <p class="text-lg text-text-secondary" data-animate="fade-up" data-delay="100">
-            Click for more details
+            View full project list
           </p>
         </div>
 
         <!-- Featured Game -->
         <div class="mb-12" data-animate="fade-up" data-delay="200">
-          <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">Most Recent Game</p>
+          <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">Featured Project</p>
           <GameCard {...games[0]} />
         </div>
 
@@ -127,197 +173,48 @@ const supportLinks = [
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {games.slice(1).map((game, index) => (
-            <div data-animate="fade-up" data-delay={300 + index * 100}>
+            <div data-animate="fade-up" data-delay={150 + index * 100}>
               <GameCard {...game} />
             </div>
           ))}
         </div>
-      </div>
-    </section>
-
-    <!-- Comments Section
-    <section id="comments" class="section bg-bg-primary">
-      <div class="container">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4" data-animate="fade-up">
-            Open Source Tools Developers Love
-          </h2>
-          <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
-            Building the future of web, mobile, and game development
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {projects.map((project, index) => (
-            <div data-animate="fade-up" data-delay={index * 100}>
-              <ProjectCard {...project} />
-            </div>
-          ))}
-        </div>
-
-        <div class="text-center" data-animate="fade-up" data-delay="600">
-          <Button href="https://github.com/leosquarizzi" variant="secondary" external>
-            View All Projects
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        <!-- See All Projects CTA -->
+        <div class="flex justify-center mt-8" data-animate="fade-up">
+          <Button href="/games" variant="secondary" size="lg">
+            See All Projects
           </Button>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- What We Build Section -->
-    <!-- <section class="section bg-bg-secondary">
-      <div class="container">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4" data-animate="fade-up">
-            What We Build
-          </h2>
-          <p class="text-lg text-text-secondary" data-animate="fade-up" data-delay="100">
-            Specialized tools and libraries across three core domains
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div data-animate="fade-up" data-delay={index * 100}>
-              <ServiceCard {...service} description="" />
-            </div>
-          ))}
-        </div>
-    
-              <div class="flex-shrink-0">
-                <div class="w-48 h-48 rounded-full overflow-hidden ring-4 ring-accent-coral/30">
-                  <img
-                    src="/img/leosuarizzi.jpg"
-                    alt="Juan David Nicholls"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <!-- Info 
-              <div class="text-center md:text-left">
-                <h3 class="text-3xl font-bold text-text-primary mb-2">
-                  Leonaro 'Flaywint' Squarizzi
-                </h3>
-                <p class="text-accent-coral font-medium mb-4">
-                  Game Designer & Indie Dev
-                </p>
-                <p class="text-text-secondary mb-6">
-                  Hi! I have a degree in Digital Games and Postgraduate Course in Games and Gamification. I’ve been diving deep into the creative side of game development by crafting game mechanics, designing engaging loops, and creating narratives. I also love to create some indie projects!
-                </p> 
-
-                <!-- Location 
-                <div class="flex items-center justify-center md:justify-start gap-2 text-text-muted mb-6">
-                  <i data-lucide="map-pin" class="w-4 h-4"></i>
-                  <span>Based in São Paulo, Brazil</span>
-                </div>
-
-                <!-- Social Links --
-                <div class="flex items-center justify-center md:justify-start gap-3">
-                  <a
-                    href="https://www.linkedin.com/in/leonardo-squarizzi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
-                  >
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                  </a>
-                  <a
-                    href="https://github.com/LeoSquarizzi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
-                  >
-                    <i data-lucide="github" class="w-5 h-5"></i>
-                  </a>
-                                    <a
-                    href="https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
-                  >
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                  </a> -->
-                  <!--<a
-                    href="https://x.com/jdnichollsc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
-                  >
-                    <i data-lucide="twitter" class="w-5 h-5"></i>
-                  </a>
-                  <a
-                    href="https://youtube.com/@proyecto26"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
-                  >
-                    <i data-lucide="youtube" class="w-5 h-5"></i>
-                  </a>
-                  -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>      
       </div>
     </section>
 
- 
-    <!-- Support Section -->
-    <!--- <section id="contact" class="section bg-bg-primary">
+    <!-- Skills Section -->
+    <section class="pt-2 pb-16 bg-bg-primary">
       <div class="container">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4" data-animate="fade-up">
-            Support Our Mission
-          </h2>
-          <p class="text-lg text-text-secondary" data-animate="fade-up" data-delay="100">
-            Help us continue building open source tools for developers worldwide
-          </p>
-        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
+            Core Expertise
+        </h2>
 
-        <!-- Donation Platforms --
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {supportLinks.map((link, index) => (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group bg-bg-card border border-border-default rounded-2xl p-6 text-center transition-all duration-300 hover:border-border-accent hover:-translate-y-1"
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {bulletskills.map((skill, index) => (
+            <div
+              class="bg-bg-card border border-border-default rounded-2xl p-6"
               data-animate="fade-up"
               data-delay={index * 100}
             >
-              <div
-                class="w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                style={`background-color: ${link.color}20;`}
-              >
-                <i data-lucide={link.icon} class="w-6 h-6" style={`color: ${link.color};`}></i>
-              </div>
-              <h3 class="font-semibold text-text-primary mb-1">{link.name}</h3>
-              <p class="text-xs text-text-muted">Support us</p>
-            </a>
+              <h3 class="text-lg font-semibold text-accent-coral mb-4">{skill.category}</h3>
+              <ul class="space-y-2">
+                {skill.items.map((item) => (
+                  <li class="text-text-secondary text-sm flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-accent-teal"></i>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
-
-        <!-- GitHub CTA --
-        <div class="bg-bg-card border-2 border-accent-coral rounded-3xl p-8 md:p-12 text-center" data-animate="fade-up" data-delay="400">
-          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-stars-gold/20 flex items-center justify-center">
-            <i data-lucide="star" class="w-8 h-8 text-stars-gold"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-text-primary mb-3">
-            Star us on GitHub
-          </h3>
-          <p class="text-text-secondary mb-6">
-            Support the project by starring our repositories
-          </p>
-          <Button href="https://github.com/proyecto26" variant="primary" external>
-            <i data-lucide="star" class="w-4 h-4"></i>
-            View Repositories
-          </Button>
-        </div>
-      </div> 
-   </section> --->
- 
+      </div>
+    </section>
   </main>
 
   <Footer />
