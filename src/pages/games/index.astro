@@ -16,30 +16,97 @@ const featuredGame = {
 
 const games = [
   {
-    title: 'Ninja',
-    description: 'Classic ninja action game with smooth controls and engaging gameplay.',
-    image: '/img/ninja.gif',
-    tags: ['Phaser', 'Action'],
-    href: '/games/ninja',
+    title: 'Tindin Metaverse',
+    subtitle: "Game Designer / Level Designer",
+    highlights: [
+      "Designed core systems and game balance",
+      "Quest and reward design",
+      "City layout and district level design",
+      "UI feedback and onboarding flows"
+    ],
+    tags: ['2D Multiplayer', 'Simulator', 'Mobile', 'PC'],
+    href: '/games/tindinmetaverse',
+    image: '/img/projects/tindin.png',
+    hoverImage: '/img/projects/tindingif.gif',
   },
   {
-    title: 'Zombies',
-    description: 'Survive waves of zombies in this thrilling survival game.',
-    image: '/games/img/zombies.png',
-    tags: ['Phaser', 'Survival'],
-    href: '/games/zombies',
+    title: 'Investors Game', 
+    subtitle: "Lead Game Designer / Level Designer",
+    highlights: [
+      "Gameplay and economy design",
+      "Quest and item system design",
+      "Level design and city interaction flow",
+      "Implementation via Blockly logic"
+    ],
+    tags: ['2D Multiplayer', 'Manager', 'Mobile', 'PC'],
+    href: '/games/tindin',
+    image: '/img/projects/invest.png',
+    hoverImage: '/img/projects/invest.gif',
   },
   {
-    title: 'Flappy Fly',
-    description: 'A fun Flappy Bird clone. Tap to fly and avoid the pipes!',
-    tags: ['Phaser', 'Arcade'],
-    href: '/games/flappy-bird',
+    title: 'Literama',
+    subtitle: "Lead Game Designer",  
+    highlights: [
+      "Lead game design and team coordination",
+      "Level design and quest sequence",
+      "Gameflow adaptation and UX guidance"
+    ],
+    tags: ['2D Multiplayer', 'Adventure', 'Mobile', 'PC'],
+    href: '/games/tindin',
+    image: '/img/projects/literama.jpg',
+    hoverImage: '/img/projects/literamagif.gif',
   },
   {
-    title: 'Debug Game',
-    description: 'A debugging playground for testing game mechanics.',
-    tags: ['Phaser', 'Debug'],
-    href: '/games/debug',
+    title: 'Save the Boat', 
+    subtitle: "Solo Developer",   
+    highlights: [
+      "Solo game design and development",
+      "Gameplay systems and enemy AI",
+      "Boss fight mechanics design"
+    ],    
+    tags: ['2D', 'Arcade', 'Unity', 'Mobile'],
+    href: '/games/tindin',
+    image: '/img/projects/boat.png',
+    hoverImage: '/img/projects/boatgif.gif',
+  },
+  {
+    title: 'Orbit Ball',  
+    subtitle: "Solo Developer",
+    highlights: [
+      "Casual game design case study",
+      "One-handed and accessible gameplay",
+      "Challenge and difficulty tuning"
+    ],
+    tags: ['2D', 'Casual', 'Unity', 'Mobile'],
+    href: '/games/tindin',
+    image: '/img/projects/orbitball.jpg',
+    hoverImage: '/img/projects/orbitballgif.gif',
+  },
+  {
+    title: 'Rivals Showdown',
+    subtitle: "Game Developer",  
+    highlights: [
+      "Core game design and mechanics",
+      "AI behavior and decision systems",
+      "Player formations and route logic"
+    ],    
+    tags: ['3D', 'Sports', 'Unity', 'Mobile'],
+    href: '/games/tindin',
+    image: '/img/projects/gameday.png',
+    hoverImage: '/img/projects/gamedaygif.gif',
+  },
+  {
+    title: 'Everything Ends in Pizza',
+    subtitle: "Game Developer",
+    highlights: [
+      "Minigame mechanics design and balance",
+      "Gameplay programming in Unity",
+      "Asset management and documentation"
+    ],
+    tags: ['2D', 'Runner', 'Unity', 'Mobile'],
+    href: '/games/tindin',
+    image: '/img/projects/pizza.png',
+    hoverImage: '/img/projects/pizzagif.gif',
   },
 ];
 ---
@@ -53,41 +120,19 @@ const games = [
       <div class="container">
         <div class="text-center mb-16">
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" data-animate="fade-up">
-            Play Our Games
+            Game Projects
           </h1>
           <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
-            Interactive experiences built with Phaser, Unity, and other game engines
+            Game projects I contributed to across different roles, platforms, and genres.
           </p>
         </div>
-
-        <!-- Featured Game -->
-        <div class="mb-16" data-animate="fade-up" data-delay="200">
-          <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-6">
-            Featured Game
-          </p>
-          <GameCard {...featuredGame} />
-        </div>
-
-        <!-- More Games -->
-        <div>
-          <p class="text-xs font-semibold text-text-muted uppercase tracking-widest mb-6">
-            More Games
-          </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {games.map((game, index) => (
-              <div data-animate="fade-up" data-delay={300 + index * 100}>
+              <div data-animate="fade-up" data-delay={10 + index * 40}>
                 <GameCard {...game} />
               </div>
             ))}
           </div>
-        </div>
-
-        <!-- Back Button -->
-        <div class="text-center mt-16" data-animate="fade-up" data-delay="600">
-          <Button href="/" variant="secondary">
-            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            Back to Home
-          </Button>
         </div>
       </div>
     </section>

@@ -5,11 +5,32 @@ import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
 
 const skills = [
-  { category: 'Programming', items: ['C#', 'Python', 'MySQL', 'PostgreSQL', 'Power Query'] },
-  { category: 'Workflow', items: ['Figma', 'Miro', 'Notion', 'Excel', 'Google Sheets', 'Google Docs', 'ChatGPT'] },
-  { category: 'Apps & Engines', items: ['Unity', 'Photoshop', 'Blender', 'Power BI'] },
-  { category: 'Methodologies', items: ['Scrum', 'Kanban', 'Crystal', 'Agile'] },
-  { category: 'Languages', items: ['Portuguese', 'English'] },
+  {
+  category: 'Game Systems & Mechanics',
+  items: [
+    'Core mechanics',
+    'Game systems design',
+    'Progression systems',
+    'Economy & balancing',
+    'Player feedback systems'
+  ]
+},
+{
+  category: 'Level & Quest Design',
+  items: [
+    'Level design',
+    'Quest & mission design',
+    'Player flow & pacing',
+    'Objective and reward design',
+    'Environmental storytelling'
+  ]
+},
+  { category: 'Game Development & Engines', items: ['Unity', 'Construct', 'C#', 'Prototyping'] },
+  { category: 'Tools & Workflow', items: ['Figma', 'Miro', 'Notion', 'Photoshop', 'Blender', 'Google Workspace', 'AI-assisted workflows'] },
+  { category: 'Methodologies', items: ['Agile', 'Scrum', 'Kanban', 'Crystal'] },
+  { category: 'Data & Analytics', items: ['Python', 'SQL', 'Power BI', 'Power Query'] },
+  { category: 'Languages', items: ['Portuguese [Native]', 'English [Advanced]'] },
+
 ];
 
 const socialLinks = [
@@ -45,7 +66,7 @@ const socialLinks = [
                 Leonardo Squarizzi
               </h1>
               <p class="text-lg text-accent-coral font-medium mb-4">
-                Game Designer & Indie Dev
+                Game Designer & Indie Game Developer
               </p>
               
               <div class="max-w-3xl md:max-w-4xl text-left">
@@ -56,20 +77,21 @@ const socialLinks = [
                   </h2>
 
                   <p class="text-text-secondary text-lg mb-4 text-justify leading-snug">
-                    Degree and a postgraduate qualification in Games with 5+ years of experience. 
+                    Degree and postgraduate background in Games, with over 5 years of experience in game design and development.
                   </p>
                   <p class="text-text-secondary text-lg mb-4 text-justify leading-snug">
-                    I’ve been working across game design and game development, focusing on game mechanics, core loops, narrative design, and gameplay balancing.
+                    Focused on game mechanics, core loops, gameplay balancing, and player experience.                   
                   </p>
                 </section>
 
                 <!-- Section: Current Role -->
                 <section class="mb-6">
                   <h2 class="text-2xl font-bold text-text-primary mb-2">
-                    🚀 Most recent: Main Game Designer at Tindin Educação
+                    🚀 Most recent: Game Designer at Tindin Educação
                   </h2>
                   <p class="text-text-secondary text-lg text-justify leading-snug">
-                        Main Game Design at Tindin Educação, leading the team and shaping user experiences for better results. I’ve collaborated with major publishers and groups, including Faber Castell, Editora Melhoramentos, FTD, and Conexia.
+                        Leading game design initiatives and shaping user experiences for educational products.
+                        Collaborated with major publishers and groups, including Faber Castell, Editora Melhoramentos, FTD, and Conexia.
                   </p>
                 </section>
 
@@ -80,7 +102,7 @@ const socialLinks = [
                   </h2>
 
                   <p class="text-text-secondary text-lg text-justify leading-snug">
-                    I’m also a co-founder of Talking Capybara, Indie studio that supports indie developers to improve workflows.
+                    Indie studio focused on supporting indie developers and improving development workflows.
                   </p>
                 </section>
               </div>
@@ -152,16 +174,12 @@ const socialLinks = [
       <div class="container">
         <div class="max-w-2xl mx-auto text-center" data-animate="fade-up">
           <h2 class="text-3xl font-bold text-text-primary mb-4">
-            Let's Build Together
+            Let’s Create Great Games!
           </h2>
           <p class="text-text-secondary mb-8">
-            Interested in collaborating or contributing to our projects?
+            Open to new collaborations, projects, and opportunities.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="https://github.com/proyecto26" variant="primary" external>
-              <i data-lucide="github" class="w-5 h-5"></i>
-              View on GitHub
-            </Button>
             <Button href="/contact" variant="secondary">
               Get in Touch
             </Button>
