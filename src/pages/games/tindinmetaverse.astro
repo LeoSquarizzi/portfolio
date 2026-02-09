@@ -31,7 +31,7 @@ const game = {
     },
   ],
 
-  resp_image: '/img/projects/tindin.png',
+  resp_midia: '/img/tindin/Tindintrailer.mp4',
 
   responsibilities: [
     'Game design documentation and systems ownership',
@@ -179,22 +179,27 @@ const getLinkIcon = (label: string) => {
       <div class="container">
         <div class="max-w-5xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <!-- Right: image -->
+            <!-- Right: video -->
             <div
               class="bg-bg-card border border-border-default rounded-2xl overflow-hidden"
               data-animate="fade-up"
-              data-delay="120">
-              <img
-                src={game.resp_image}
-                alt={`${game.title} highlight`}
+              data-delay="120"
+            >
+              <video
                 class="w-full h-full object-cover"
-                loading="lazy"
+                src={game.resp_midia}
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                controls
               />
             </div>
             <!-- Right: text -->
             <div>
               <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-2" data-animate="fade-up">
-                What did I do
+                My role & contributions
               </h2>
 
               <p
@@ -263,7 +268,7 @@ const getLinkIcon = (label: string) => {
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟩 The result</p>
+                  <p class="font-semibold text-text-primary mb-1">🟩 Impact</p>
                   <p>
                     The new structure improved immersion, scalability, and player engagement, becoming the foundation
                     for future updates and events.
@@ -325,297 +330,307 @@ const getLinkIcon = (label: string) => {
               </div>
             </div>
           </div>
-
-          <!-- Highlight 02 -->
-          <section class="py-12 md:py-16">
-            <div class="container">
-              <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                  <!-- LEFT SIDE -->
-                  <div class="flex flex-col gap-6">
-                    <!-- Slider -->
-                    <div
-                      class="bg-bg-card border border-border-default rounded-2xl overflow-hidden relative"
-                      data-slider="city-2">
-                      <div class="relative w-full aspect-video">
-                        {
-                          highlight_2_Images.map((src, i) => (
-                            <img
-                              src={src}
-                              alt={`Highlight 2 ${i + 1}`}
-                              class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                                i === 0 ? 'opacity-100' : 'opacity-0'
-                              }`}
-                              data-slide="city-2"
-                            />
-                          ))
-                        }
-                      </div>
-
-                      <!-- Controls -->
-                      <button
-                        type="button"
-                        class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-bg-card/80 border border-border-default text-text-primary flex items-center justify-center hover:bg-bg-card transition-colors"
-                        data-prev="city-2">
-                        ‹
-                      </button>
-
-                      <button
-                        type="button"
-                        class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-bg-card/80 border border-border-default text-text-primary flex items-center justify-center hover:bg-bg-card transition-colors"
-                        data-next="city-2">
-                        ›
-                      </button>
-
-                      <!-- Dots -->
-                      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                        {
-                          highlight_2_Images.map((_, i) => (
-                            <button
-                              type="button"
-                              class={`w-2.5 h-2.5 rounded-full border border-border-default ${
-                                i === 0 ? 'bg-accent-coral' : 'bg-bg-card/60'
-                              }`}
-                              data-dot="city-2"
-                              data-index={i}
-                            />
-                          ))
-                        }
-                      </div>
+        </div>
+        <!-- Highlight 02 -->
+        <section class="py-12 md:py-16">
+          <div class="container">
+            <div class="max-w-6xl mx-auto">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <!-- LEFT SIDE -->
+                <div class="flex flex-col gap-6">
+                  <!-- Slider -->
+                  <div
+                    class="bg-bg-card border border-border-default rounded-2xl overflow-hidden relative"
+                    data-slider="city-2">
+                    <div class="relative w-full aspect-video">
+                      {
+                        highlight_2_Images.map((src, i) => (
+                          <img
+                            src={src}
+                            alt={`Highlight 2 ${i + 1}`}
+                            class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                              i === 0 ? 'opacity-100' : 'opacity-0'
+                            }`}
+                            data-slide="city-2"
+                          />
+                        ))
+                      }
                     </div>
 
-                    <!-- Static Image -->
-                    <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                      <img
-                        src="/img/tindin/origamifull.png"
-                        alt="Origami Island overview"
-                        class="w-full object-cover"
-                      />
+                    <!-- Controls -->
+                    <button
+                      type="button"
+                      class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-bg-card/80 border border-border-default text-text-primary flex items-center justify-center hover:bg-bg-card transition-colors"
+                      data-prev="city-2">
+                      ‹
+                    </button>
+
+                    <button
+                      type="button"
+                      class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-bg-card/80 border border-border-default text-text-primary flex items-center justify-center hover:bg-bg-card transition-colors"
+                      data-next="city-2">
+                      ›
+                    </button>
+
+                    <!-- Dots -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                      {
+                        highlight_2_Images.map((_, i) => (
+                          <button
+                            type="button"
+                            class={`w-2.5 h-2.5 rounded-full border border-border-default ${
+                              i === 0 ? 'bg-accent-coral' : 'bg-bg-card/60'
+                            }`}
+                            data-dot="city-2"
+                            data-index={i}
+                          />
+                        ))
+                      }
                     </div>
                   </div>
 
-                  <!-- Text (Right) -->
-                  <div data-animate="fade-up">
-                    <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                      Seasonal Adventures: Origami Island
-                    </h3>
+                  <!-- Static Image -->
+                  <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
+                    <img src="/img/tindin/origamifull.png" alt="Origami Island overview" class="w-full object-cover" />
+                  </div>
+                </div>
 
-                    <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
-                      Game Design · Level design · Limited Events · Quest design
-                    </p>
+                <!-- Text (Right) -->
+                <div data-animate="fade-up">
+                  <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
+                    Seasonal Adventures: Origami Island
+                  </h3>
 
-                    <div class="space-y-5 text-text-secondary text-sm md:text-base">
-                      <div>
-                        <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
-                        <p>
-                          The metaverse relied on multiple disconnected maps with frequent loading screens and school
-                          based content.
-                        </p>
-                        <p>
-                          This structure caused player lack of interest, fragmented navigation, and limited engagement
-                          over time.
-                        </p>
-                      </div>
+                  <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
+                    Game Design · Level design · Limited Events · Quest design
+                  </p>
 
-                      <div>
-                        <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
+                  <div class="space-y-5 text-text-secondary text-sm md:text-base">
+                    <div>
+                      <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
+                      <p>
+                        The metaverse relied on multiple disconnected maps with frequent loading screens and school
+                        based content.
+                      </p>
+                      <p>
+                        This structure caused player lack of interest, fragmented navigation, and limited engagement
+                        over time.
+                      </p>
+                    </div>
 
-                        <p class="mb-4">
-                          I designed a seasonal adventure themed narratives and limited time rewards, independent from
-                          the main metaverse.
-                        </p>
+                    <div>
+                      <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
 
-                        <p class="mb-4">
-                          Origami Island was the first map built as a adventure, without loading screens.
-                        </p>
+                      <p class="mb-4">
+                        I designed a seasonal adventure themed narratives and limited time rewards, independent from the
+                        main metaverse.
+                      </p>
 
-                        <p class="mb-2">To achieve this, I:</p>
+                      <p class="mb-4">
+                        Origami Island was the first map built as a adventure, without loading screens.
+                      </p>
 
-                        <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                          <li>Change phaser backgroud same color as sprite water</li>
-                          <li>Add travel system connecting distant islands</li>
-                          <li>Add environment that changes with quests progression</li>
-                          <li>A reward system with exclusive, themed, limited time items</li>
-                        </ul>
-                      </div>
+                      <p class="mb-2">To achieve this, I:</p>
 
-                      <div>
-                        <p class="font-semibold text-text-primary mb-1 mt-2">
-                          🟩 The result [Based on players feedback]
-                        </p>
-                        <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                          <li>The event significantly increased player engagement</li>
-                          <li>Removing loading screens improved flow and immersion</li>
-                          <li>Limited time rewards created urgency and motivation</li>
-                          <li>Origami became a success case for futures adventures</li>
-                        </ul>
-                      </div>
+                      <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
+                        <li>Change phaser backgroud same color as sprite water</li>
+                        <li>Add travel system connecting distant islands</li>
+                        <li>Add environment that changes with quests progression</li>
+                        <li>A reward system with exclusive, themed, limited time items</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impact [Based on players feedback]</p>
+                      <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
+                        <li>The event significantly increased player engagement</li>
+                        <li>Removing loading screens improved flow and immersion</li>
+                        <li>Limited time rewards created urgency and motivation</li>
+                        <li>Origami became a success case for futures adventures</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-
-          <!-- Divider -->
-          <div class="flex items-center gap-4 my-3" data-animate="fade-up">
-            <span class="flex-1 h-px bg-border-default"></span>
-            <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-              Other Design Contributions
-            </span>
-            <span class="flex-1 h-px bg-border-default"></span>
-          </div>
-        </div>
-
-        <!-- Other Highlights -->
-        <section class="mt-10 mb-10">
-          <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <!-- Card 1 -->
-              <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-                <img
-                  src="/img/tindin/origami1.png"
-                  alt="System flow"
-                  class="w-full h-40 object-cover rounded-xl mb-4"
-                />
-
-                <p class="text-sm font-semibold text-text-primary mb-2">System Design</p>
-
-                <ul class="space-y-1 text-sm text-text-secondary">
-                  <li>Core system planning</li>
-                  <li>State flow definition</li>
-                  <li>Edge case mapping</li>
-                </ul>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-                <img src="/img/tindin/origami1.png" alt="UI flows" class="w-full h-40 object-cover rounded-xl mb-4" />
-
-                <p class="text-sm font-semibold text-text-primary mb-2">UI / UX Flows</p>
-
-                <ul class="space-y-1 text-sm text-text-secondary">
-                  <li>Onboarding flows</li>
-                  <li>Feedback states</li>
-                  <li>Error handling</li>
-                </ul>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-                <img
-                  src="/img/tindin/origami1.png"
-                  alt="Level design"
-                  class="w-full h-40 object-cover rounded-xl mb-4"
-                />
-
-                <p class="text-sm font-semibold text-text-primary mb-2">Level Design</p>
-
-                <ul class="space-y-1 text-sm text-text-secondary">
-                  <li>Spatial planning</li>
-                  <li>Player guidance</li>
-                  <li>Difficulty pacing</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4 my-3" data-animate="fade-up">
+          <span class="flex-1 h-px bg-border-default"></span>
+          <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
+            Other Design Contributions
+          </span>
+          <span class="flex-1 h-px bg-border-default"></span>
+        </div>
       </div>
 
-      <Footer />
-    </section>
+      <!-- Other Highlights -->
+      <section class="mt-10">
+        <div class="container">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-bg-card border border-border-default rounded-2xl p-5">
+              <img src="/img/tindin/itensmap.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-    <script>
-      import { gsap } from 'gsap';
-      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+              <p class="text-sm font-semibold text-text-primary mb-3">Asset Database</p>
 
-      gsap.registerPlugin(ScrollTrigger);
+              <ul class="space-y-2 text-sm text-text-secondary">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Create name, category, and values</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Configuration of interactive assets</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Tag system for events, progress, and economy</span>
+                </li>
+              </ul>
+            </div>
 
-      document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
-        const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+            <!-- Card 2 -->
+            <div class="bg-bg-card border border-border-default rounded-2xl p-5">
+              <img src="/img/tindin/buymechanics.webp" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          delay,
-          ease: 'power2.out',
-        });
+              <p class="text-sm font-semibold text-text-primary mb-3">Game Core Planning</p>
+
+              <ul class="space-y-2 text-sm text-text-secondary">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Structured core narrative flows</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Connecting decisions and conditions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Integration of choices, system states, and progression</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-bg-card border border-border-default rounded-2xl p-5">
+              <img src="/img/tindin/fluxgram.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
+
+              <p class="text-sm font-semibold text-text-primary mb-3">Design Documentation</p>
+
+              <ul class="space-y-2 text-sm text-text-secondary">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Structured GDDs for team use</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Reusable templates for narrative, actions flows, and mission design</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+                  <span>Documentation updates alongside design iterations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+  <Footer />
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+      const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        delay,
+        ease: 'power2.out',
       });
-    </script>
+    });
+  </script>
 
-    <script>
-      const setupSlider = (id, intervalMs = 45000) => {
-        const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
-        const prevBtn = document.querySelector(`[data-prev="${id}"]`);
-        const nextBtn = document.querySelector(`[data-next="${id}"]`);
-        const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
-        const container = document.querySelector(`[data-slider="${id}"]`);
+  <script>
+    const setupSlider = (id, intervalMs = 45000) => {
+      const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
+      const prevBtn = document.querySelector(`[data-prev="${id}"]`);
+      const nextBtn = document.querySelector(`[data-next="${id}"]`);
+      const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
+      const container = document.querySelector(`[data-slider="${id}"]`);
 
-        if (!slides.length) return;
+      if (!slides.length) return;
 
-        let index = 0;
-        let timer = null;
+      let index = 0;
+      let timer = null;
 
-        const render = (newIndex) => {
-          index = (newIndex + slides.length) % slides.length;
+      const render = (newIndex) => {
+        index = (newIndex + slides.length) % slides.length;
 
-          slides.forEach((el, i) => {
-            el.classList.toggle('opacity-100', i === index);
-            el.classList.toggle('opacity-0', i !== index);
-          });
-
-          dots.forEach((d, i) => {
-            d.classList.toggle('bg-accent-coral', i === index);
-            d.classList.toggle('bg-bg-card/60', i !== index);
-          });
-        };
-
-        const start = () => {
-          stop();
-          timer = setInterval(() => render(index + 1), intervalMs);
-        };
-
-        const stop = () => {
-          if (timer) clearInterval(timer);
-          timer = null;
-        };
-
-        prevBtn?.addEventListener('click', () => {
-          render(index - 1);
-          start();
-        });
-        nextBtn?.addEventListener('click', () => {
-          render(index + 1);
-          start();
+        slides.forEach((el, i) => {
+          el.classList.toggle('opacity-100', i === index);
+          el.classList.toggle('opacity-0', i !== index);
         });
 
-        dots.forEach((d) => {
-          d.addEventListener('click', () => {
-            const i = parseInt(d.getAttribute('data-index') || '0', 10);
-            render(i);
-            start();
-          });
+        dots.forEach((d, i) => {
+          d.classList.toggle('bg-accent-coral', i === index);
+          d.classList.toggle('bg-bg-card/60', i !== index);
         });
-
-        container?.addEventListener('mouseenter', stop);
-        container?.addEventListener('mouseleave', start);
-
-        render(0);
-        start();
       };
 
-      // auto-init: pega todos os sliders da página
-      document.querySelectorAll('[data-slider]').forEach((el) => {
-        const id = el.getAttribute('data-slider');
-        if (id) setupSlider(id);
-        //if (id) setupSlider(id, 2000);
+      const start = () => {
+        stop();
+        timer = setInterval(() => render(index + 1), intervalMs);
+      };
+
+      const stop = () => {
+        if (timer) clearInterval(timer);
+        timer = null;
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        render(index - 1);
+        start();
       });
-    </script>
-  </main>
+      nextBtn?.addEventListener('click', () => {
+        render(index + 1);
+        start();
+      });
+
+      dots.forEach((d) => {
+        d.addEventListener('click', () => {
+          const i = parseInt(d.getAttribute('data-index') || '0', 10);
+          render(i);
+          start();
+        });
+      });
+
+      container?.addEventListener('mouseenter', stop);
+      container?.addEventListener('mouseleave', start);
+
+      render(0);
+      start();
+    };
+
+    // auto-init: pega todos os sliders da página
+    document.querySelectorAll('[data-slider]').forEach((el) => {
+      const id = el.getAttribute('data-slider');
+      if (id) setupSlider(id);
+      //if (id) setupSlider(id, 2000);
+    });
+  </script>
 </BaseLayout>
