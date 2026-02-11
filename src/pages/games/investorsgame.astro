@@ -8,12 +8,12 @@ const game = {
   title: 'The Investor’s Game',
   tagline: 'Manager · Strategy · Simulator · Multiplayer · 2D',
   shortDescription:
-    'Manage your finances and progress through Maslow’s Hierarchy of Needs to climb the global leaderboard and become one of the top investors.',
+    'A financial life simulator where players manage income, expenses, investments, and career choices to progress through Maslow’s Hierarchy of Needs and compete on global leaderboards.',
   snapshop: {
     developer: 'Tindin Educação',
-    timeOnProject: '4 months',
+    timeOnProject: '6 months',
     engine: 'Phaser',
-    partners: 'Editora Melhoramentos',
+    partners: 'B3 · Tesouro Direto · Artemisia · TD Impacta',
   },
 
   links: [
@@ -29,13 +29,14 @@ const game = {
   resp_midia: '4x8_TYs5_A8',
 
   responsibilities: [
-    'Led game design delivery (documentation, planning, and team coordination)',
-    'Tech design alignment (feasibility, adapting mechanics to Phaser/platform constraints)',
-    'Designed all four adventures (level structure, pacing, progression)',
-    'Guided UI/UX adaptation for the remaster (flows, readability, interaction beats)',
-    'Cataloged and remastered 150+ assets for reuse in the new build',
+    'Game systems and economy design ownership',
+    'Quest and progression design',
+    'City level design and interaction flow',
+    'Economy balancing (salary, items, investments, enterprises)',
+    'Creation and management of 400+ in-game items',
+    'UI/UX collaboration for complex menu systems',
   ],
-  role: 'Lead Game Designer · Tech Design · Level Designer',
+  role: 'Lead Game Designer · Game Balance · Level Designer',
 };
 
 const highlight_1_Images = [
@@ -176,14 +177,6 @@ const getLinkIcon = (label: string) => {
               class="bg-bg-card border border-border-default rounded-2xl overflow-hidden aspect-video"
               data-animate="fade-up"
               data-delay="120">
-              <iframe
-                class="w-full h-full"
-                src={`https://www.youtube.com/embed/${game.resp_midia}?rel=0&modestbranding=1`}
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
             </div>
             <!-- Right: text -->
             <div>
@@ -231,36 +224,41 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <!-- Text -->
             <div data-animate="fade-up">
-              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Full remake on our platform</h3>
+              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Economy & Progression Systems Design</h3>
               <!-- Highlight Subtitle -->
               <p
                 class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
-                Lead Game Design · Level Design · Progression · UX
+                Game Design · Economy · Progression · Simulation
               </p>
 
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
-                  <p>
-                    Original game discontinued due to an outdated engine, requiring a full rebuild while preserving
-                    story content of all adventures.
-                  </p>
+                  <p>The game features dozens of interactive buildings, each opening menus with multiple actions.</p>
+                  <p>This complexity risked overwhelming players and breaking navigation consistency.</p>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟨 What I did</p>
-                  <p>
-                    Mapped the entire legacy game: asset inventory, feature parity, what could be reused vs rebuilt, and
-                    a production plan aligned to existing platform tools.
+                  <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
+
+                  <p class="mb-4">
+                    I proposed a unified navigation system where every interaction path leads to the same result.
                   </p>
+                  <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
+                    <li>Easy ways to access menus flow</li>
+                    <li>The camera always follow player's actions</li>
+                    <li>Contextual menus open consistently from any entry point</li>
+                    <li>Buildings representing items categories</li>
+                  </ul>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟩 Impact</p>
-                  <p>
-                    Enabled a faster rebuild by focusing dev effort on what mattered, reducing rework and keeping scope
-                    controlled for a 4-month delivery.
-                  </p>
+                  <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impact [Based on players feedback]</p>
+                  <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
+                    <li>Reduced cognitive load despite high system complexity</li>
+                    <li>Clear mental model for navigation</li>
+                    <li>Seamless interaction flow across the entire city</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -324,56 +322,50 @@ const getLinkIcon = (label: string) => {
             <div class="max-w-6xl mx-auto">
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <!-- LEFT SIDE -->
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-0">
                   <!-- Static Image -->
                   <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/literama/literamaclick.gif" alt="Origami Island overview" class="w-full object-cover" />
+                    <img src="/img/investor/blocky.gif" alt="Origami Island overview" class="w-full object-cover" />
                   </div>
-                
+
                   <!-- Static Image -->
                   <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/literama/literamamaze.gif" alt="Origami Island overview" class="w-full object-cover" />
+                    <img src="/img/investor/blocky2.gif" alt="Origami Island overview" class="w-full object-cover" />
                   </div>
                 </div>
 
                 <!-- Text (Right) -->
                 <div data-animate="fade-up">
                   <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                    Adapting challenges and gameflow
+                    Technical Design & Implementation (Blockly)
                   </h3>
 
                   <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
-                    Game Design · Level design · Quest design
+                    Game Design · Technical Design · Systems Implementation
                   </p>
 
                   <div class="space-y-5 text-text-secondary text-sm md:text-base">
                     <div>
-                      <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
-                      <p>
-                        Some legacy challenges were not compatible with the platform and there wasn’t time to develop new systems from scratch.
+                      <p class="font-semibold text-text-primary mb-3">🟨 System Limitation</p>
+                      <p class="mb-2">The entire Tindin platform is built on Blockly-based programming.</p>
+                      <p class="mb-2">
+                        The small team and tight deadlines required hands-on implementation of several core systems.
+                      </p>
+                      <p class="mb-2">Working with block based logic demanded a different approaches,due to its constraints.</p>
+                      <p class=" mb-2">
+                        This made clear algorithm planning, system breakdown, and documentation essential to ensure
+                        reliable gameplay behavior.
                       </p>
                     </div>
 
                     <div>
-                      <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
-
-                      <p class="mb-4">
-                        Redesigned interactions without changing the story: 
-                      </p>
-                      <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                        <li>Designed new mini games</li>
-                        <li>Inserted new checkpoints</li>
-                        <li>NPC interaction positions</li>
-                        <li>Add more gameplay in-between dialogues </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impact [Based on players feedback]</p>
+                      <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Using Blockly, I implemented</p>
                       <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                        <li>More stable progression</li>
-                        <li>Less reading fatigue</li>
-                        <li>Improved player immersion</li>
+                        <li>Quest validation and progression systems</li>
+                        <li>Camera focus logic tied to building interactions and contextual dialogues</li>
+                        <li>Menu systems dynamically linked to their corresponding buildings</li>
+                        <li>A structured item catalog (icons, categories, subcategories, and values)</li>
+                        <li>Enterprise purchase logic integrated into the economy system</li>
                       </ul>
                     </div>
                   </div>
@@ -401,20 +393,20 @@ const getLinkIcon = (label: string) => {
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
               <img src="/img/tindin/itensmap.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-              <p class="text-sm font-semibold text-text-primary mb-3">Lead Game Design</p>
+              <p class="text-sm font-semibold text-text-primary mb-3">Navigation & Player Flow</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Direction and planning of all adventures</span>
+                  <span>Connecting interaction buildings, menus, and camera focus</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Cross-team communication (Design, Dev, QA)</span>
+                  <span>Consistent navigation paths regardless of entry point</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Game loop, pacing, and overall balance</span>
+                  <span>Clear mental model despite a high number of interactive options</span>
                 </li>
               </ul>
             </div>
@@ -423,20 +415,20 @@ const getLinkIcon = (label: string) => {
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
               <img src="/img/tindin/buymechanics.webp" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-              <p class="text-sm font-semibold text-text-primary mb-3">GDDs & Documentation</p>
+              <p class="text-sm font-semibold text-text-primary mb-3">Instant Feedback & Gameflow</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Structured GDDs per map and rework scope</span>
+                  <span>Real-time feedback for purchases</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Mapping original content</span>
+                  <span>Clear patrimony overview with categorized income and expense</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Documentation to support team </span>
+                  <span>Smooth pacing supported by continuous feedback loops</span>
                 </li>
               </ul>
             </div>
@@ -445,20 +437,20 @@ const getLinkIcon = (label: string) => {
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
               <img src="/img/tindin/fluxgram.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-              <p class="text-sm font-semibold text-text-primary mb-3">Iterations & QA</p>
+              <p class="text-sm font-semibold text-text-primary mb-3">Creative</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Rapid testing, narrative adjustments, and flow fixes</span>
+                  <span>Complex mn </span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Close collaboration with QA team</span>
+                  <span> and  </span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Game stability and polishment</span>
+                  <span> loops   </span>
                 </li>
               </ul>
             </div>

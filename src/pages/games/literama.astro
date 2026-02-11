@@ -326,21 +326,36 @@ const getLinkIcon = (label: string) => {
                 <!-- LEFT SIDE -->
                 <div class="flex flex-col gap-6">
                   <!-- Static Image -->
-                  <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/literama/literamaclick.gif" alt="Origami Island overview" class="w-full object-cover" />
-                  </div>
-                
+<div
+              class="bg-bg-card border border-border-default rounded-2xl overflow-hidden"
+              data-animate="fade-up"
+              data-delay="120"
+            >
+              <video
+                class="w-full h-full object-cover"
+                src='/img/literama/literama_intro.mp4'
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                controls
+              />
+            </div>
+
                   <!-- Static Image -->
                   <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/literama/literamamaze.gif" alt="Origami Island overview" class="w-full object-cover" />
+                    <img
+                      src="/img/literama/literamaclick.gif"
+                      alt="Origami Island overview"
+                      class="w-full object-cover"
+                    />
                   </div>
                 </div>
 
                 <!-- Text (Right) -->
                 <div data-animate="fade-up">
-                  <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                    Adapting challenges and gameflow
-                  </h3>
+                  <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Adapting challenges and gameflow</h3>
 
                   <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
                     Game Design · Level design · Quest design
@@ -350,21 +365,20 @@ const getLinkIcon = (label: string) => {
                     <div>
                       <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
                       <p>
-                        Some legacy challenges were not compatible with the platform and there wasn’t time to develop new systems from scratch.
+                        Some legacy challenges were not compatible with the platform and there wasn’t time to develop
+                        new systems from scratch.
                       </p>
                     </div>
 
                     <div>
                       <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
 
-                      <p class="mb-4">
-                        Redesigned interactions without changing the story: 
-                      </p>
+                      <p class="mb-4">Redesigned interactions without changing the story:</p>
                       <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
                         <li>Designed new mini games</li>
                         <li>Inserted new checkpoints</li>
                         <li>NPC interaction positions</li>
-                        <li>Add more gameplay in-between dialogues </li>
+                        <li>Add more gameplay in-between dialogues</li>
                       </ul>
                     </div>
 
@@ -399,7 +413,7 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1 -->
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-              <img src="/img/tindin/itensmap.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
+              <img src="/img/literama/literamamaze.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
               <p class="text-sm font-semibold text-text-primary mb-3">Lead Game Design</p>
 
@@ -421,7 +435,7 @@ const getLinkIcon = (label: string) => {
 
             <!-- Card 2 -->
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-              <img src="/img/tindin/buymechanics.webp" class="w-full h-40 object-cover rounded-xl mb-4" />
+              <img src="/img/literama/caçapalavra.png" class="w-full h-40 object-cover rounded-xl mb-4" />
 
               <p class="text-sm font-semibold text-text-primary mb-3">GDDs & Documentation</p>
 
@@ -436,14 +450,14 @@ const getLinkIcon = (label: string) => {
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Documentation to support team </span>
+                  <span>Documentation to support team</span>
                 </li>
               </ul>
             </div>
 
             <!-- Card 3 -->
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-              <img src="/img/tindin/fluxgram.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
+              <img src="/img/literama/fluxgram.webp" class="w-full h-40 object-cover rounded-xl mb-4" />
 
               <p class="text-sm font-semibold text-text-primary mb-3">Iterations & QA</p>
 
