@@ -11,14 +11,14 @@ interface Props {
 }
 
 const {
-  title = 'Proyecto 26 - Changing the world with small contributions',
-  description = 'Open source tools for Web, Mobile, and Game Development that developers around the world love. Building innovative solutions since 2014.',
-  image = '/img/p26-retro.jpg',
+  title = 'Leonardo Squarizzi - Game Design & Game Dev',
+  description = 'Game Designer and Indie Game Developer',
+  image = '/img/icon.jpg',
   keywords = 'open source, web development, mobile development, game development, react native, unity, phaser, typescript, javascript',
   canonicalUrl
 } = Astro.props;
 
-const siteUrl = 'https://proyecto26.com';
+const siteUrl = 'https://leosquarizzi.com';
 const currentPath = Astro.url.pathname;
 const fullUrl = canonicalUrl || `${siteUrl}${currentPath}`;
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
@@ -35,15 +35,15 @@ const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
     <!-- SEO Meta Tags -->
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="Juan David Nicholls - Proyecto 26" />
+    <meta name="author" content="Leonardo Squarizzi" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href={fullUrl} />
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f2385a" />
     <meta name="msapplication-TileColor" content="#0a0a0b" />
@@ -52,14 +52,14 @@ const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Proyecto 26" />
+    <meta property="og:site_name" content="Leonardo Squarizzi" />
     <meta property="og:title" content={title} />
     <meta property="og:url" content={fullUrl} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={fullImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Proyecto 26 - Open Source Organization" />
+    <meta property="og:image:alt" content="Leonardo Squarizzi - Game Design & Game Dev" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -68,7 +68,7 @@ const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
     <meta name="twitter:site" content="@proyecto26" />
     <meta name="twitter:creator" content="@jdnichollsc" />
     <meta name="twitter:image" content={fullImageUrl} />
-    <meta name="twitter:image:alt" content="Proyecto 26 - Open Source Organization" />
+    <meta name="twitter:image:alt" content="Leonardo Squarizzi - Game Design & Game Dev" />
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

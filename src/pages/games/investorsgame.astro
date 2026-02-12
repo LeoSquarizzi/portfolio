@@ -26,7 +26,7 @@ const game = {
     { label: 'PC', href: 'https://ojogodoinvestidor.com.br/', external: true },
   ],
 
-  resp_midia: '4x8_TYs5_A8',
+  resp_midia: '/img/investor/investortrailer.mp4',
 
   responsibilities: [
     'Game systems and economy design ownership',
@@ -39,12 +39,7 @@ const game = {
   role: 'Lead Game Designer · Game Balance · Level Designer',
 };
 
-const highlight_1_Images = [
-  '/img/literama/literamamap1.gif',
-  '/img/literama/literamamap2.gif',
-  '/img/literama/literamamap3.gif',
-  '/img/literama/literamamap4.gif',
-];
+const highlight_1_Images = ['/img/investor/investormenu.gif', '/img/investor/investormenu2.gif'];
 
 const highlight_2_Images = ['/img/literama/origami1.png', '/img/literama/origami2.png'];
 
@@ -88,7 +83,7 @@ const getLinkIcon = (label: string) => {
 };
 ---
 
-<BaseLayout title={`${game.title} - Games`} description={game.shortDescription}>
+<BaseLayout title={`${game.title} - Leonardo Squarizzi`} description={game.shortDescription}>
   <Header currentPage="games" />
 
   <main class="pt-[72px]">
@@ -174,9 +169,19 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <!-- Right: YouTube video -->
             <div
-              class="bg-bg-card border border-border-default rounded-2xl overflow-hidden aspect-video"
+              class="bg-bg-card border border-border-default rounded-2xl overflow-hidden"
               data-animate="fade-up"
               data-delay="120">
+              <video
+                class="w-full h-full object-cover"
+                src={game.resp_midia}
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                controls>
+              </video>
             </div>
             <!-- Right: text -->
             <div>
@@ -234,30 +239,33 @@ const getLinkIcon = (label: string) => {
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
-                  <p>The game features dozens of interactive buildings, each opening menus with multiple actions.</p>
-                  <p>This complexity risked overwhelming players and breaking navigation consistency.</p>
+                  <p>
+                    The entire game experience is menu based, around purchases, resource management, and XP progression.
+                  </p>
+                  <p>With 400+ items, each containing unique values, recurring expenses, and XP rewards.</p>
                 </div>
 
                 <div>
                   <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
 
-                  <p class="mb-4">
-                    I proposed a unified navigation system where every interaction path leads to the same result.
-                  </p>
+                  <p class="mb-4">I designed and balanced the economic and progression system:</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Easy ways to access menus flow</li>
-                    <li>The camera always follow player's actions</li>
-                    <li>Contextual menus open consistently from any entry point</li>
-                    <li>Buildings representing items categories</li>
+                    <li>Structured and managed a centralized spreadsheet with 400+ item variables</li>
+                    <li>Modeled income sources, expenses, and investment returns</li>
+                    <li>Designed XP thresholds and level unlock logic across five progression tiers</li>
+                    <li>Applied value distribution formulas to maintain curve consistency</li>
+                    <li>Tuned early-game economy to prevent inflation or stagnation</li>
+                    <li>Controlled unlock pacing to regulate complexity exposure</li>
                   </ul>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impact [Based on players feedback]</p>
+                  <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impact [LiveOps]</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                    <li>Reduced cognitive load despite high system complexity</li>
-                    <li>Clear mental model for navigation</li>
-                    <li>Seamless interaction flow across the entire city</li>
+                    <li>Stable economic loop with controlled resource circulation</li>
+                    <li>Consistent progression curve across all five tiers</li>
+                    <li>Predictable yet flexible scaling for future content additions</li>
+                    <li>Reduced risk of inflation, soft-locks, or progression breaks</li>
                   </ul>
                 </div>
               </div>
@@ -265,292 +273,267 @@ const getLinkIcon = (label: string) => {
 
             <!-- Slider -->
             <div
-              class="bg-bg-card border border-border-default rounded-2xl overflow-hidden relative"
-              data-slider="city-1"
+              class="bg-bg-card border border-border-default rounded-2xl overflow-hidden p-4"
               data-animate="fade-up"
               data-delay="80">
-              <div class="relative w-full aspect-video">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {
-                  highlight_1_Images.map((src, i) => (
-                    <img
-                      src={src}
-                      alt={`Metaverse city redesign ${i + 1}`}
-                      class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
-                      data-slide="city-1"
-                    />
-                  ))
-                }
-              </div>
-
-              <!-- Controls -->
-              <button
-                type="button"
-                class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-bg-card/80 border border-border-default text-text-primary flex items-center justify-center hover:bg-bg-card transition-colors"
-                aria-label="Previous image"
-                data-prev="city-1">
-                ‹
-              </button>
-
-              <button
-                type="button"
-                class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-bg-card/80 border border-border-default text-text-primary flex items-center justify-center hover:bg-bg-card transition-colors"
-                aria-label="Next image"
-                data-next="city-1">
-                ›
-              </button>
-
-              <!-- Dots -->
-              <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                {
-                  highlight_1_Images.map((_, i) => (
-                    <button
-                      type="button"
-                      class={`w-2.5 h-2.5 rounded-full border border-border-default ${i === 0 ? 'bg-accent-coral' : 'bg-bg-card/60'} transition-colors`}
-                      aria-label={`Go to image ${i + 1}`}
-                      data-dot="city-1"
-                      data-index={i}
-                    />
+                  highlight_1_Images.slice(0, 2).map((src, i) => (
+                    <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden">
+                      <img
+                        src={src}
+                        alt={`Investor vertical ${i + 1}`}
+                        class="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
                   ))
                 }
               </div>
             </div>
           </div>
-        </div>
-        <!-- Highlight 02 -->
-        <section class="py-12 md:py-16">
-          <div class="container">
-            <div class="max-w-6xl mx-auto">
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <!-- LEFT SIDE -->
-                <div class="flex flex-col gap-0">
-                  <!-- Static Image -->
-                  <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/investor/blocky.gif" alt="Origami Island overview" class="w-full object-cover" />
-                  </div>
-
-                  <!-- Static Image -->
-                  <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/investor/blocky2.gif" alt="Origami Island overview" class="w-full object-cover" />
-                  </div>
-                </div>
-
-                <!-- Text (Right) -->
-                <div data-animate="fade-up">
-                  <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                    Technical Design & Implementation (Blockly)
-                  </h3>
-
-                  <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
-                    Game Design · Technical Design · Systems Implementation
-                  </p>
-
-                  <div class="space-y-5 text-text-secondary text-sm md:text-base">
-                    <div>
-                      <p class="font-semibold text-text-primary mb-3">🟨 System Limitation</p>
-                      <p class="mb-2">The entire Tindin platform is built on Blockly-based programming.</p>
-                      <p class="mb-2">
-                        The small team and tight deadlines required hands-on implementation of several core systems.
-                      </p>
-                      <p class="mb-2">Working with block based logic demanded a different approaches,due to its constraints.</p>
-                      <p class=" mb-2">
-                        This made clear algorithm planning, system breakdown, and documentation essential to ensure
-                        reliable gameplay behavior.
-                      </p>
-                    </div>
-
-                    <div>
-                      <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Using Blockly, I implemented</p>
-                      <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                        <li>Quest validation and progression systems</li>
-                        <li>Camera focus logic tied to building interactions and contextual dialogues</li>
-                        <li>Menu systems dynamically linked to their corresponding buildings</li>
-                        <li>A structured item catalog (icons, categories, subcategories, and values)</li>
-                        <li>Enterprise purchase logic integrated into the economy system</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Divider -->
-        <div class="flex items-center gap-4 my-3" data-animate="fade-up">
-          <span class="flex-1 h-px bg-border-default"></span>
-          <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-            Other Design Contributions
-          </span>
-          <span class="flex-1 h-px bg-border-default"></span>
         </div>
       </div>
+    </section>
+    <!-- Highlight 02 -->
+    <section class="py-5 md:py-16">
+      <div class="container">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <!-- LEFT SIDE -->
+            <div class="flex flex-col gap-0">
+              <!-- Static Image -->
+              <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
+                <img src="/img/investor/blocky.gif" alt="Origami Island overview" class="w-full object-cover" />
+              </div>
 
-      <!-- Other Highlights -->
-      <section class="mt-10">
-        <div class="container">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-              <img src="/img/tindin/itensmap.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
-
-              <p class="text-sm font-semibold text-text-primary mb-3">Navigation & Player Flow</p>
-
-              <ul class="space-y-2 text-sm text-text-secondary">
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Connecting interaction buildings, menus, and camera focus</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Consistent navigation paths regardless of entry point</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Clear mental model despite a high number of interactive options</span>
-                </li>
-              </ul>
+              <!-- Static Image -->
+              <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
+                <img
+                  src="/img/investor/blocky2.gif"
+                  alt="Origami Island overview"
+                  class="w-full h-[350px] object-cover object-top"
+                />
+              </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-              <img src="/img/tindin/buymechanics.webp" class="w-full h-40 object-cover rounded-xl mb-4" />
+            <!-- Text (Right) -->
+            <div data-animate="fade-up">
+              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
+                Technical Design & Implementation (Blockly)
+              </h3>
 
-              <p class="text-sm font-semibold text-text-primary mb-3">Instant Feedback & Gameflow</p>
+              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
+                Game Design · Technical Design · Systems Implementation
+              </p>
 
-              <ul class="space-y-2 text-sm text-text-secondary">
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Real-time feedback for purchases</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Clear patrimony overview with categorized income and expense</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Smooth pacing supported by continuous feedback loops</span>
-                </li>
-              </ul>
-            </div>
+              <div class="space-y-5 text-text-secondary text-sm md:text-base">
+                <div>
+                  <p class="font-semibold text-text-primary mb-3">🟨 System Limitation</p>
+                  <p class="mb-2">The entire Tindin platform is built on Blockly-based programming.</p>
+                  <p class="mb-2">
+                    The small team and tight deadlines required hands-on implementation of several core systems.
+                  </p>
+                  <p class="mb-2">
+                    Working with block based logic demanded a different approaches,due to its constraints.
+                  </p>
+                  <p class="mb-2">
+                    This made clear algorithm planning, system breakdown, and documentation essential to ensure reliable
+                    gameplay behavior.
+                  </p>
+                </div>
 
-            <!-- Card 3 -->
-            <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-              <img src="/img/tindin/fluxgram.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
-
-              <p class="text-sm font-semibold text-text-primary mb-3">Creative</p>
-
-              <ul class="space-y-2 text-sm text-text-secondary">
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Complex mn </span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span> and  </span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span> loops   </span>
-                </li>
-              </ul>
+                <div>
+                  <p class="font-semibold text-text-primary mt-2 mb-3">🟩 Using Blockly, I implemented</p>
+                  <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
+                    <li>Quest validation and progression systems</li>
+                    <li>Camera focus logic tied to building interactions and contextual dialogues</li>
+                    <li>Menu systems dynamically linked to their corresponding buildings</li>
+                    <li>A structured item catalog (icons, categories, subcategories, and values)</li>
+                    <li>Enterprise purchase logic integrated into the economy system</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
-    <Footer />
 
-    <script>
-      import { gsap } from 'gsap';
-      import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
-        const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
-
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-          },
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          delay,
-          ease: 'power2.out',
-        });
-      });
-    </script>
-
-    <script>
-      const setupSlider = (id, intervalMs = 45000) => {
-        const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
-        const prevBtn = document.querySelector(`[data-prev="${id}"]`);
-        const nextBtn = document.querySelector(`[data-next="${id}"]`);
-        const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
-        const container = document.querySelector(`[data-slider="${id}"]`);
-
-        if (!slides.length) return;
-
-        let index = 0;
-        let timer = null;
-
-        const render = (newIndex) => {
-          index = (newIndex + slides.length) % slides.length;
-
-          slides.forEach((el, i) => {
-            el.classList.toggle('opacity-100', i === index);
-            el.classList.toggle('opacity-0', i !== index);
-          });
-
-          dots.forEach((d, i) => {
-            d.classList.toggle('bg-accent-coral', i === index);
-            d.classList.toggle('bg-bg-card/60', i !== index);
-          });
-        };
-
-        const start = () => {
-          stop();
-          timer = setInterval(() => render(index + 1), intervalMs);
-        };
-
-        const stop = () => {
-          if (timer) clearInterval(timer);
-          timer = null;
-        };
-
-        prevBtn?.addEventListener('click', () => {
-          render(index - 1);
-          start();
-        });
-        nextBtn?.addEventListener('click', () => {
-          render(index + 1);
-          start();
-        });
-
-        dots.forEach((d) => {
-          d.addEventListener('click', () => {
-            const i = parseInt(d.getAttribute('data-index') || '0', 10);
-            render(i);
-            start();
-          });
-        });
-
-        container?.addEventListener('mouseenter', stop);
-        container?.addEventListener('mouseleave', start);
-
-        render(0);
-        start();
-      };
-
-      // auto-init: pega todos os sliders da página
-      document.querySelectorAll('[data-slider]').forEach((el) => {
-        const id = el.getAttribute('data-slider');
-        if (id) setupSlider(id);
-        //if (id) setupSlider(id, 2000);
-      });
-    </script>
+    <!-- Divider -->
+    <div class="flex items-center gap-4 my-3" data-animate="fade-up">
+      <span class="flex-1 h-px bg-border-default"></span>
+      <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
+        Other Design Contributions
+      </span>
+      <span class="flex-1 h-px bg-border-default"></span>
+    </div>
   </main>
+
+  <!-- Other Highlights -->
+  <section class="mt-10">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-bg-card border border-border-default rounded-2xl p-5">
+          <img src="/img/investor/cycle.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
+
+          <p class="text-sm font-semibold text-text-primary mb-3">Navigation & Player Flow</p>
+
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Connecting interaction buildings, menus, and camera focus</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Consistent navigation paths regardless of entry point</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Clear mental model despite a high number of interactive options</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-bg-card border border-border-default rounded-2xl p-5">
+          <img src="/img/investor/investor.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
+
+          <p class="text-sm font-semibold text-text-primary mb-3">Instant Feedback & Gameflow</p>
+
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Real-time feedback for purchases</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Clear patrimony overview with categorized income and expense</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Smooth pacing supported by continuous feedback loops</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-bg-card border border-border-default rounded-2xl p-5">
+          <img src="/img/investor/cycle.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
+
+          <p class="text-sm font-semibold text-text-primary mb-3">Creative Design</p>
+
+          <ul class="space-y-2 text-sm text-text-secondary">
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Designed item naming, descriptions, and thematic coherence across 400+ assets</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Translated Maslow’s hierarchy into a structured progression</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
+              <span>Maintained a collaborative item spreadsheet used by the entire team</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+<Footer />
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+    const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      delay,
+      ease: 'power2.out',
+    });
+  });
+</script>
+
+<script>
+  const setupSlider = (id, intervalMs = 45000) => {
+    const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
+    const prevBtn = document.querySelector(`[data-prev="${id}"]`);
+    const nextBtn = document.querySelector(`[data-next="${id}"]`);
+    const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
+    const container = document.querySelector(`[data-slider="${id}"]`);
+
+    if (!slides.length) return;
+
+    let index = 0;
+    let timer = null;
+
+    const render = (newIndex) => {
+      index = (newIndex + slides.length) % slides.length;
+
+      slides.forEach((el, i) => {
+        el.classList.toggle('opacity-100', i === index);
+        el.classList.toggle('opacity-0', i !== index);
+      });
+
+      dots.forEach((d, i) => {
+        d.classList.toggle('bg-accent-coral', i === index);
+        d.classList.toggle('bg-bg-card/60', i !== index);
+      });
+    };
+
+    const start = () => {
+      stop();
+      timer = setInterval(() => render(index + 1), intervalMs);
+    };
+
+    const stop = () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+    };
+
+    prevBtn?.addEventListener('click', () => {
+      render(index - 1);
+      start();
+    });
+    nextBtn?.addEventListener('click', () => {
+      render(index + 1);
+      start();
+    });
+
+    dots.forEach((d) => {
+      d.addEventListener('click', () => {
+        const i = parseInt(d.getAttribute('data-index') || '0', 10);
+        render(i);
+        start();
+      });
+    });
+
+    container?.addEventListener('mouseenter', stop);
+    container?.addEventListener('mouseleave', start);
+
+    render(0);
+    start();
+  };
+
+  // auto-init: pega todos os sliders da página
+  document.querySelectorAll('[data-slider]').forEach((el) => {
+    const id = el.getAttribute('data-slider');
+    if (id) setupSlider(id);
+    //if (id) setupSlider(id, 2000);
+  });
+</script>
