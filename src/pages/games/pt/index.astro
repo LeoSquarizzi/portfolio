@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import GameCard from '../../components/GameCard.astro';
+import Button from '../../components/Button.astro';
+
+const featuredGame = {
+  title: 'NinjaDev',
+  description: 'A side-scrolling platformer that showcases basic game development techniques. Jump, run, and slash your way through challenging levels filled with enemies and obstacles. Built with Phaser to demonstrate common game mechanics.',
+  image: '/img/projects/ninja-dev.svg',
+  tags: ['Phaser', '2D Platformer', 'Action'],
+  href: '/games/ninjadev',
+  featured: true,
+};
+
+const games = [
+  {
+    title: 'Tindin Metaverse',
+    subtitle: "Game Designer / Level Designer",
+    highlights: [
+      "Designed core systems and game balance",
+      "Quest and reward design",
+      "City layout and district level design",
+      "UI feedback and onboarding flows"
+    ],
+    tags: ['2D Multiplayer', 'Simulator', 'Mobile', 'PC'],
+    href: '/games/tindinmetaverse',
+    image: '/img/projects/tindin.png',
+    hoverImage: '/img/projects/tindingif.gif',
+  },
+  {
+    title: 'Investors Game', 
+    subtitle: "Lead Game Designer / Level Designer",
+    highlights: [
+      "Gameplay and economy design",
+      "Quest and item system design",
+      "Level design and city interaction flow",
+      "Implementation via Blockly logic"
+    ],
+    tags: ['2D Multiplayer', 'Manager', 'Mobile', 'PC'],
+    href: '/games/investorsgame',
+    image: '/img/projects/invest.png',
+    hoverImage: '/img/projects/invest.gif',
+  },
+  {
+    title: 'Literama',
+    subtitle: "Lead Game Designer",  
+    highlights: [
+      "Lead game design and team coordination",
+      "Level design and quest sequence",
+      "Gameflow adaptation and UX guidance"
+    ],
+    tags: ['2D Multiplayer', 'Adventure', 'Mobile', 'PC'],
+    href: '/games/literama',
+    image: '/img/projects/literama.jpg',
+    hoverImage: '/img/projects/literamagif.gif',
+  },
+  {
+    title: 'Save the Boat', 
+    subtitle: "Solo Developer",   
+    highlights: [
+      "Solo game design and development",
+      "Gameplay systems and enemy AI",
+      "Boss fight mechanics design"
+    ],    
+    tags: ['2D', 'Arcade', 'Unity', 'Mobile'],
+    href: '/games/savetheboat',
+    image: '/img/projects/boat.png',
+    hoverImage: '/img/projects/boatgif.gif',
+  },
+  {
+    title: 'Orbit Ball',  
+    subtitle: "Solo Developer",
+    highlights: [
+      "Casual game design case study",
+      "One-handed and accessible gameplay",
+      "Challenge and difficulty tuning"
+    ],
+    tags: ['2D', 'Casual', 'Unity', 'Mobile'],
+    href: '/games/orbitball',
+    image: '/img/projects/orbitball.jpg',
+    hoverImage: '/img/projects/orbitballgif.gif',
+  },
+  {
+    title: 'Rivals Showdown',
+    subtitle: "Game Developer",  
+    highlights: [
+      "Core game design and mechanics",
+      "AI behavior and decision systems",
+      "Player formations and route logic"
+    ],    
+    tags: ['3D', 'Sports', 'Unity', 'Mobile'],
+    href: '/games/rivalsshowdown',
+    image: '/img/projects/gameday.png',
+    hoverImage: '/img/projects/gamedaygif.gif',
+  },
+  {
+    title: 'Everything Ends in Pizza',
+    subtitle: "Game Developer",
+    highlights: [
+      "Minigame mechanics design and balance",
+      "Gameplay programming in Unity",
+      "Asset management and documentation"
+    ],
+    tags: ['2D', 'Runner', 'Unity', 'Mobile'],
+    href: '/games/pizza',
+    image: '/img/projects/pizza.png',
+    hoverImage: '/img/projects/pizzagif.gif',
+  },
+];
+---
+
+<BaseLayout title="Leonardo Squarizzi - Game Design & Game Dev" description="Game Desgin and Game Dev passionate about games!">
+  <Header currentPage="games" />
+
+  <main class="pt-[72px]">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-bg-primary">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" data-animate="fade-up">
+            Game Projects
+          </h1>
+          <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
+            Game projects I contributed to across different roles, platforms, and genres.
+          </p>
+        </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {games.map((game, index) => (
+              <div data-animate="fade-up" data-delay={10 + index * 40}>
+                <GameCard {...game} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+    const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      delay,
+      ease: 'power2.out',
+    });
+  });
+</script>

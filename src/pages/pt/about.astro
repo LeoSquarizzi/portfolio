@@ -1,0 +1,196 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import Header from 'src/components/Header.astro';
+import Footer from 'src/components/Footer.astro';
+import Button from 'src/components/Button.astro';
+
+const skills = [
+  {
+  category: 'Sistemas e Mecânicas de Jogo',
+  items: [
+    'Design de Mecânicas',
+    'Design de sistemas de jogo',
+    'Sistemas de progressão',
+    'Economia e balanceamento',
+    'Sistemas de feedback ao jogador'
+  ]
+},
+{
+  category: 'Design de Level e Missões',
+  items: [
+    'Level design',
+    'Quest e Mission Design',
+    'Fluxo e Ritmo de Jogo',
+    'Design de Objetivos e Recompensas',
+    'Narrativa Ambiental'
+  ]
+},
+  { category: 'Desenvolvimento de Jogos e Engines', items: ['Unity', 'Construct', 'C#', 'Prototipagem'] },
+  { category: 'Ferramentas e Fluxo de Trabalho', items: ['Figma', 'Miro', 'Notion', 'Photoshop', 'Blender', 'Google Workspace', 'Workflows agilizados por IA'] },
+  { category: 'Metodologias', items: ['Agile', 'Scrum', 'Kanban', 'Crystal'] },
+  { category: 'Dados e Análise', items: ['Python', 'SQL', 'Power BI', 'Power Query'] },
+  { category: 'Idiomas', items: ['Português [Nativo]', 'Inglês [Avançado]'] },
+];
+
+const socialLinks = [
+  { name: 'GitHub', icon: 'github', href: 'https://github.com/LeoSquarizzi' },
+  { name: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/leonardo-squarizzi' },
+  { name: 'Email', icon: 'mail', href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.' },
+];
+---
+
+<BaseLayout title="Sobre - Leonardo Squarizzi" description="Saiba mais sobre Leonardo Squarizzi e sua trajetória profissional">
+  <Header currentPage="about" />
+
+  <main class="pt-[72px]">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-bg-primary">
+      <div class="container">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex flex-col md:flex-row items-start gap-8 md:gap-12 mb-16">
+            
+            <!-- Photo -->
+            <div class="flex-shrink-0 -ml-6 mt-12" data-animate="fade-up">
+              <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-accent-coral/30">
+                <img
+                  src="/img/leosuarizzi.jpg"
+                  alt="Leonardo Squarizzi"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div class="text-center md:text-left" data-animate="fade-up" data-delay="100">
+              <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-1">
+                Leonardo Squarizzi
+              </h1>
+              <p class="text-lg text-accent-coral font-medium mb-4">
+                Game Designer e Desenvolvedor Indie
+              </p>
+              
+              <div class="max-w-3xl md:max-w-4xl text-left">
+                
+                <!-- Section: Journey -->
+                <section class="mb-6">
+                  <h2 class="text-2xl font-bold text-text-primary mb-2">
+                    🎓 Minha trajetória em jogos
+                  </h2>
+
+                  <p class="text-text-secondary text-lg mb-4 text-justify leading-snug">
+                    Formação em Jogos com pós-graduação na área, além de mais de 5 anos de experiência em game design e desenvolvimento.
+                  </p>
+                  <p class="text-text-secondary text-lg mb-4 text-justify leading-snug">
+                    Foco em mecânicas de jogo, core loops, balanceamento de gameplay e experiência do jogador.                   
+                  </p>
+                </section>
+
+                <!-- Section: Current Role -->
+                <section class="mb-6">
+                  <h2 class="text-2xl font-bold text-text-primary mb-2">
+                    🚀 Mais recente: Game Designer na Tindin Educação
+                  </h2>
+                  <p class="text-text-secondary text-lg text-justify leading-snug">
+                        Liderando iniciativas de game design e estruturando experiências para produtos educacionais.
+                        Colaboração com grandes editoras e grupos, incluindo Faber Castell, Editora Melhoramentos, FTD e Conexia.
+                  </p>
+                </section>
+
+                <!-- Section: Other Projects -->
+                <section>
+                  <h2 class="text-2xl font-bold text-text-primary mb-2">
+                    🕹️ Outros projetos
+                  </h2>
+
+                  <p class="text-text-secondary text-lg text-justify leading-snug">
+                    Estúdio indie focado em apoiar desenvolvedores independentes e troca de experiências no mercado.
+                  </p>
+                </section>
+              </div>
+
+              <!-- Location and Social Links -->
+              <div class="flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6 pt-5">
+                
+                <!-- Social Links -->
+                <div class="flex items-center justify-center gap-3">
+                  {socialLinks.map((link) => (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-10 h-10 rounded-lg bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
+                      aria-label={link.name}
+                    >
+                      <i data-lucide={link.icon} class="w-5 h-5"></i>
+                    </a>
+                  ))}
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-center justify-center gap-2 text-text-muted">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  <span>São Paulo, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <i data-lucide="chevron-down" class="w-6 h-6 text-text-muted"></i>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16 bg-bg-primary">
+      <div class="container">
+        <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
+          Minhas Skills
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {skills.map((skill, index) => (
+            <div
+              class="bg-bg-card border border-border-default rounded-2xl p-6"
+              data-animate="fade-up"
+              data-delay={index * 100}
+            >
+              <h3 class="text-lg font-semibold text-accent-coral mb-4">{skill.category}</h3>
+              <ul class="space-y-2">
+                {skill.items.map((item) => (
+                  <li class="text-text-secondary text-sm flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-accent-teal"></i>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-bg-primary">
+      <div class="container">
+        <div class="max-w-2xl mx-auto text-center" data-animate="fade-up">
+          <h2 class="text-3xl font-bold text-text-primary mb-4">
+            Bora trabalhar juntos!
+          </h2>
+          <p class="text-text-secondary mb-8">
+            Aberto a novas colaborações, projetos e oportunidades.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button href="/contact" variant="secondary">
+              Entre em contato
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

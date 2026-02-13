@@ -9,9 +9,6 @@ import GameCard from '../components/GameCard.astro';
 import Button from '../components/Button.astro';
 import { getFeaturedProjects } from '../data/projects';
 
-//Ref: https://proyecto26.com/
-
-// Fetch featured projects with GitHub stats at build time
 const projects = await getFeaturedProjects(6);
 
 const services = [

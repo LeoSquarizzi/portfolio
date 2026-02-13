@@ -1,0 +1,138 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import Header from 'src/components/Header.astro';
+import Footer from 'src/components/Footer.astro';
+import Button from 'src/components/Button.astro';
+
+const contactMethods = [
+  {
+    title: 'LinkedIn',
+    description: 'Vamos nos conectar por lá',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/in/leonardo-squarizzi/',
+    color: 'blue',
+  },
+  {
+    title: 'Email',
+    description: 'Pode me chamar quando quiser',
+    icon: 'youtube',
+    href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.',
+    color: 'orange',
+  },
+  {
+    title: 'GitHub',
+    description: 'Códigos e repositórios',
+    icon: 'github',
+    href: 'https://github.com/leosquarizzi',
+    color: 'coral',
+  },
+];
+---
+
+<BaseLayout title="Contato - Leonardo Squarizzi" description="Entre em contato com Leonardo Squarizzi. Vou curtir conversar com você!">
+  <Header currentPage="contact" />
+
+  <main class="pt-[72px]">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-bg-primary">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-10" data-animate="fade-up">
+            Entre em contato
+          </h1>
+          <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
+            Gostou do meu trabalho, quer trocar uma ideia sobre games ou explorar algum projeto novo? É só me chamar.
+          </p>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {contactMethods.map((method, index) => (
+            <a
+              href={method.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-bg-card border border-border-default rounded-2xl p-6 text-center transition-all duration-300 hover:border-border-accent hover:-translate-y-1"
+              data-animate="fade-up"
+              data-delay={index * 10}
+            >
+              <div class={`w-14 h-14 mx-auto mb-4 rounded-xl bg-bg-hover flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                <i data-lucide={method.icon} class={`w-7 h-7 text-accent-${method.color}`}></i>
+              </div>
+              <h3 class="text-lg font-semibold text-text-primary mb-2">{method.title}</h3>
+              <p class="text-text-muted text-sm">{method.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-bg-secondary">
+      <div class="container">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
+            Como eu trabalho
+          </h2>
+
+          <div class="space-y-4">
+            <div class="bg-bg-card border border-border-default rounded-2xl p-6" data-animate="fade-up" data-delay="100">
+              <h3 class="text-lg font-semibold text-text-primary mb-2">Você aceita freelance, contrato ou CLT?</h3>
+              <p class="text-text-secondary">
+                Estou aberto a oportunidades freelance, contrato e CLT.
+              </p>
+            </div>
+            
+            <div class="bg-bg-card border border-border-default rounded-2xl p-6" data-animate="fade-up" data-delay="200">
+              <h3 class="text-lg font-semibold text-text-primary mb-2">Você trabalha remoto, presencial ou híbrido?</h3>
+              <p class="text-text-secondary">
+                Tenho bastante experiência com trabalho remoto. Presencial e híbrido também são possíveis na região de São Paulo.
+              </p>
+            </div>
+            
+            <div class="bg-bg-card border border-border-default rounded-2xl p-6" data-animate="fade-up" data-delay="400">
+              <h3 class="text-lg font-semibold text-text-primary mb-2">Quais funções você costuma assumir?</h3>
+              <p class="text-text-secondary">
+                Game Designer, Level Designer e Game Developer.
+              </p>
+            </div>
+
+            <div class="bg-bg-card border border-border-default rounded-2xl p-6" data-animate="fade-up" data-delay="300">
+              <h3 class="text-lg font-semibold text-text-primary mb-2">Que tipo de projeto te interessa?</h3>
+              <p class="text-text-secondary">
+                Meu foco principal é em projetos de jogos de qualquer tamanho, de indies pequenos a produções maiores, tanto para mobile quanto para PC.
+                Também tenho experiência com jogos educacionais e gamificação, e estou aberto a oportunidades nessa área.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+    const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      delay,
+      ease: 'power2.out',
+    });
+  });
+</script>

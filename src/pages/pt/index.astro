@@ -1,0 +1,197 @@
+--- 
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import Header from 'src/components/Header.astro';
+import Footer from 'src/components/Footer.astro';
+import Hero from 'src/components/Hero.astro';
+import ProjectCard from 'src/components/ProjectCard.astro';
+import ServiceCard from 'src/components/ServiceCard.astro';
+import GameCard from 'src/components/GameCard.astro';
+import Button from 'src/components/Button.astro';
+import { getFeaturedProjects } from 'src/data/projects';
+
+const projects = await getFeaturedProjects(6);
+
+const services = [
+  {
+    title: 'Desenvolvimento Mobile',
+    icon: 'smartphone',
+    color: 'coral' as const,
+    technologies: ['React Native', 'NativeScript', 'Ionic'],
+  },
+  {
+    title: 'Componentes Web',
+    icon: 'globe',
+    color: 'teal' as const,
+    technologies: ['Stencil', 'Web Animations API', 'TypeScript'],
+  },
+  {
+    title: 'Desenvolvimento de Jogos',
+    icon: 'gamepad-2',
+    color: 'orange' as const,
+    technologies: ['Phaser', 'Unity', 'C#'],
+  },
+];
+
+const games = [
+  {
+    title: 'Tindin Metaverse',
+    subtitle: "Game Designer / Level Designer",
+    highlights: [
+      "Design de sistemas centrais e balanceamento de progressão",
+      "Design de quests e recompensas",
+      "Layout da cidade e design dos distritos",
+      "Mecânicas de navegação e fast travel",
+      "Feedback de interface e fluxos de onboarding"
+    ],
+    tags: ['2D Multiplayer', 'Simulador', 'Phaser', 'Mobile', 'PC'],
+    href: '/games/tindinmetaverse',
+    image: '/img/projects/tindin.png',
+    hoverImage: '/img/projects/tindingif.gif',
+    featured: true,
+  },
+  {
+    title: 'Investors Game', 
+    subtitle: "Lead Game Designer / Level Designer",
+    highlights: [
+      "Design de gameplay e level design",
+      "Sistema de quests e compra de itens",
+      "Balanceamento de economia",
+    ],
+    tags: ['2D Multiplayer', 'Manager', 'Mobile', 'PC'],
+    href: '/games/investorsgame',
+    image: '/img/projects/invest.png',
+    hoverImage: '/img/projects/invest.gif',
+  },
+  {
+    title: 'Literama',
+    subtitle: "Lead Game Designer",  
+    highlights: [
+      "Lead da equipe de Game Design",
+      "Level design e estrutura de quests",
+      "Ajustes de gameflow e direcionamento de UX"
+    ],
+    tags: ['2D Multiplayer', 'Aventura', 'Mobile', 'PC'],
+    href: '/games/literama',
+    image: '/img/projects/literama.jpg',
+    hoverImage: '/img/projects/literamagif.gif',
+  },
+  {
+    title: 'Save the Boat', 
+    subtitle: "Desenvolvedor Solo",   
+    highlights: [
+      "Game design e desenvolvimento",
+      "Sistemas de gameplay e IA de inimigos",
+      "Design de mecânicas de boss fight"
+    ],    
+    tags: ['2D', 'Arcade', 'Unity', 'Mobile'],
+    href: '/games/savetheboat',
+    image: '/img/projects/boat.png',
+    hoverImage: '/img/projects/boatgif.gif',
+  },
+];
+
+const bulletskills = [
+  { 
+    category: 'Game Design e Desenvolvimento', 
+    items: [
+      'Sistemas de jogo',
+      'Mecânicas de jogo',
+      'Level design',
+      'Balanceamento de gameplay',
+      'Progressão de jogo'
+    ] 
+  },
+  { 
+    category: 'Engines e Programação', 
+    items: ['Unity', 'Construct', 'C#', 'SQL', 'Python'] 
+  },
+  { 
+    category: 'Processos e Metodologias', 
+    items: ['Agile', 'Scrum', 'Kanban', 'Figma/Miro', 'Google Workspace'] 
+  },
+];
+---
+
+<BaseLayout title="Leonardo Squarizzi - Game Design e Desenvolvimento de Jogos">
+  <Header currentPage="home" />
+
+  <main>
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- Games Section -->
+    <section id="projects" class="section bg-bg-primary">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-4" data-animate="fade-up">
+            Principais Projetos
+          </h2>
+          <p class="text-lg text-text-secondary" data-animate="fade-up" data-delay="100">
+            Alguns dos jogos que contribuí no desenvolvimento, em diferentes gêneros e plataformas.
+          </p>
+        </div>
+
+        <!-- Featured Game -->
+        <div class="mb-12" data-animate="fade-up" data-delay="200">
+          <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">
+            Projeto Destaque
+          </p>
+          <GameCard {...games[0]} />
+        </div>
+
+        <!-- More Games -->
+        <div class="mb-4">
+          <p class="text-xs font-semibold text-text-muted uppercase tracking-widest mb-4">
+            Outros projetos
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {games.slice(1).map((game, index) => (
+            <div data-animate="fade-up" data-delay={150 + index * 100}>
+              <GameCard {...game} />
+            </div>
+          ))}
+        </div>
+
+        <!-- See All Projects CTA -->
+        <div class="flex justify-center mt-8" data-animate="fade-up">
+          <Button href="/games" variant="secondary" size="lg">
+            Ver todos os projetos
+          </Button>
+        </div>      
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="pt-2 pb-16 bg-bg-primary">
+      <div class="container">
+        <h2 class="text-3xl md:text-4xl font-bold text-text-primary text-center mb-12" data-animate="fade-up">
+          Principais Skills
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {bulletskills.map((skill, index) => (
+            <div
+              class="bg-bg-card border border-border-default rounded-2xl p-6"
+              data-animate="fade-up"
+              data-delay={index * 100}
+            >
+              <h3 class="text-lg font-semibold text-accent-coral mb-4">{skill.category}</h3>
+              <ul class="space-y-2">
+                {skill.items.map((item) => (
+                  <li class="text-text-secondary text-sm flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-accent-teal"></i>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
