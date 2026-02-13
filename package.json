@@ -1,8 +1,8 @@
 {
-  "name": "proyecto26-website",
+  "name": "leosquarizzi-website",
   "type": "module",
   "version": "2.0.0",
-  "description": "Proyecto 26 - Changing the world with small contributions",
+  "description": "Leonardo Squarizzi - Game Design & Game Dev",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
