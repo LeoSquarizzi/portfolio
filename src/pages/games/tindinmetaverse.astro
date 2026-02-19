@@ -183,8 +183,7 @@ const getLinkIcon = (label: string) => {
             <div
               class="bg-bg-card border border-border-default rounded-2xl overflow-hidden"
               data-animate="fade-up"
-              data-delay="120"
-            >
+              data-delay="120">
               <video
                 class="w-full h-full object-cover"
                 src={game.resp_midia}
@@ -193,8 +192,8 @@ const getLinkIcon = (label: string) => {
                 loop
                 playsinline
                 preload="metadata"
-                controls
-              />
+                controls>
+              </video>
             </div>
             <!-- Right: text -->
             <div>
@@ -538,99 +537,100 @@ const getLinkIcon = (label: string) => {
           </div>
         </div>
       </section>
-  </main>
-  <Footer />
+    </section>
+    <Footer />
 
-  <script>
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-    gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
-      const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+      document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+        const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
 
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        delay,
-        ease: 'power2.out',
-      });
-    });
-  </script>
-
-  <script>
-    const setupSlider = (id, intervalMs = 45000) => {
-      const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
-      const prevBtn = document.querySelector(`[data-prev="${id}"]`);
-      const nextBtn = document.querySelector(`[data-next="${id}"]`);
-      const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
-      const container = document.querySelector(`[data-slider="${id}"]`);
-
-      if (!slides.length) return;
-
-      let index = 0;
-      let timer = null;
-
-      const render = (newIndex) => {
-        index = (newIndex + slides.length) % slides.length;
-
-        slides.forEach((el, i) => {
-          el.classList.toggle('opacity-100', i === index);
-          el.classList.toggle('opacity-0', i !== index);
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          delay,
+          ease: 'power2.out',
         });
-
-        dots.forEach((d, i) => {
-          d.classList.toggle('bg-accent-coral', i === index);
-          d.classList.toggle('bg-bg-card/60', i !== index);
-        });
-      };
-
-      const start = () => {
-        stop();
-        timer = setInterval(() => render(index + 1), intervalMs);
-      };
-
-      const stop = () => {
-        if (timer) clearInterval(timer);
-        timer = null;
-      };
-
-      prevBtn?.addEventListener('click', () => {
-        render(index - 1);
-        start();
       });
-      nextBtn?.addEventListener('click', () => {
-        render(index + 1);
-        start();
-      });
+    </script>
 
-      dots.forEach((d) => {
-        d.addEventListener('click', () => {
-          const i = parseInt(d.getAttribute('data-index') || '0', 10);
-          render(i);
+    <script>
+      const setupSlider = (id, intervalMs = 45000) => {
+        const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
+        const prevBtn = document.querySelector(`[data-prev="${id}"]`);
+        const nextBtn = document.querySelector(`[data-next="${id}"]`);
+        const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
+        const container = document.querySelector(`[data-slider="${id}"]`);
+
+        if (!slides.length) return;
+
+        let index = 0;
+        let timer = null;
+
+        const render = (newIndex) => {
+          index = (newIndex + slides.length) % slides.length;
+
+          slides.forEach((el, i) => {
+            el.classList.toggle('opacity-100', i === index);
+            el.classList.toggle('opacity-0', i !== index);
+          });
+
+          dots.forEach((d, i) => {
+            d.classList.toggle('bg-accent-coral', i === index);
+            d.classList.toggle('bg-bg-card/60', i !== index);
+          });
+        };
+
+        const start = () => {
+          stop();
+          timer = setInterval(() => render(index + 1), intervalMs);
+        };
+
+        const stop = () => {
+          if (timer) clearInterval(timer);
+          timer = null;
+        };
+
+        prevBtn?.addEventListener('click', () => {
+          render(index - 1);
           start();
         });
+        nextBtn?.addEventListener('click', () => {
+          render(index + 1);
+          start();
+        });
+
+        dots.forEach((d) => {
+          d.addEventListener('click', () => {
+            const i = parseInt(d.getAttribute('data-index') || '0', 10);
+            render(i);
+            start();
+          });
+        });
+
+        container?.addEventListener('mouseenter', stop);
+        container?.addEventListener('mouseleave', start);
+
+        render(0);
+        start();
+      };
+
+      // auto-init: pega todos os sliders da página
+      document.querySelectorAll('[data-slider]').forEach((el) => {
+        const id = el.getAttribute('data-slider');
+        if (id) setupSlider(id);
+        //if (id) setupSlider(id, 2000);
       });
-
-      container?.addEventListener('mouseenter', stop);
-      container?.addEventListener('mouseleave', start);
-
-      render(0);
-      start();
-    };
-
-    // auto-init: pega todos os sliders da página
-    document.querySelectorAll('[data-slider]').forEach((el) => {
-      const id = el.getAttribute('data-slider');
-      if (id) setupSlider(id);
-      //if (id) setupSlider(id, 2000);
-    });
-  </script>
+    </script>
+  </main>
 </BaseLayout>
