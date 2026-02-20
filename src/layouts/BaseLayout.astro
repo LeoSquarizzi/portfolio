@@ -15,7 +15,7 @@ const {
   description = 'Game Designer and Indie Game Developer',
   image = '/img/icon.jpg',
   keywords = 'open source, web development, mobile development, game development, react native, unity, phaser, typescript, javascript',
-  canonicalUrl
+  canonicalUrl,
 } = Astro.props;
 
 const siteUrl = 'https://leosquarizzi.com';
@@ -24,7 +24,7 @@ const fullUrl = canonicalUrl || `${siteUrl}${currentPath}`;
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -81,10 +81,25 @@ const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ND3N4W941"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', 'G-4ND3N4W941');
     </script>
+
+    <script>
+      const savedLang = localStorage.getItem('lang');
+
+      if (savedLang === 'pt' && !window.location.pathname.startsWith('/pt')) {
+        window.location.href = '/pt' + window.location.pathname;
+      }
+
+      if (savedLang === 'en' && window.location.pathname.startsWith('/pt')) {
+        window.location.href = window.location.pathname.replace('/pt', '');
+      }
+    </script>
+    
   </head>
   <body class="bg-bg-primary text-text-primary antialiased">
     <!-- Custom cursor (desktop only) -->

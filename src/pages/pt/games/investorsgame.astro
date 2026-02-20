@@ -5,13 +5,13 @@ import Footer from '../../../components/Footer.astro';
 import Button from '../../../components/Button.astro';
 
 const game = {
-  title: 'The Investor’s Game',
-  tagline: 'Manager · Strategy · Simulator · Multiplayer · 2D',
+  title: 'O Jogo do Investidor',
+  tagline: 'Gestão · Estratégia · Simulador · Multijogador · 2D',
   shortDescription:
-    'A financial life simulator where players manage income, expenses, investments, and career choices to progress through Maslow’s Hierarchy of Needs and compete on global leaderboards.',
+    'Um simulador de vida financeira em que o jogador gerencia renda, despesas, investimentos e escolhas para avançar na Pirâmide de Maslow e competir em rankings.',
   snapshop: {
     developer: 'Tindin Educação',
-    timeOnProject: '6 months',
+    timeOnProject: '6 meses',
     engine: 'Phaser',
     partners: 'B3 · Tesouro Direto · Artemisia · TD Impacta',
   },
@@ -29,14 +29,14 @@ const game = {
   resp_midia: '/img/investor/investortrailer.mp4',
 
   responsibilities: [
-    'Game systems and economy design ownership',
-    'Quest and progression design',
-    'City level design and interaction flow',
-    'Economy balancing (salary, items, investments, enterprises)',
-    'Creation and management of 400+ in-game items',
-    'UI/UX collaboration for complex menu systems',
+    'Responsável pelo design de sistemas e pela economia do jogo',
+    'Design de quests e progressão',
+    'Level design da cidade e fluxo de interação',
+    'Balanceamento da economia (salário, itens, investimentos, empreendimentos)',
+    'Criação e gestão de mais de 400 itens dentro do jogo',
+    'Colaboração com UI e UX para sistemas de menus complexos',
   ],
-  role: 'Lead Game Designer · Game Balance · Level Designer',
+  role: 'Lead Game Designer · Balanceamento · Level Designer',
 };
 
 const highlight_1_Images = ['/img/investor/investormenu.gif', '/img/investor/investormenu2.gif'];
@@ -110,12 +110,12 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-10" data-animate="fade-up" data-delay="160">
             <!-- Box Snapshot -->
             <div class="bg-bg-card border border-border-default rounded-2xl p-6">
-              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">Project Snapshot</p>
+              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">Resumo do projeto</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span><span class="text-text-muted">Developer:</span> {game.snapshop.developer}</span>
+                  <span><span class="text-text-muted">Desenvolvedor:</span> {game.snapshop.developer}</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
@@ -123,11 +123,11 @@ const getLinkIcon = (label: string) => {
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span><span class="text-text-muted">Time on project:</span> {game.snapshop.timeOnProject}</span>
+                  <span><span class="text-text-muted">Tempo no projeto:</span> {game.snapshop.timeOnProject}</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span><span class="text-text-muted">Partners:</span> {game.snapshop.partners}</span>
+                  <span><span class="text-text-muted">Parceiros:</span> {game.snapshop.partners}</span>
                 </li>
               </ul>
             </div>
@@ -186,7 +186,7 @@ const getLinkIcon = (label: string) => {
             <!-- Right: text -->
             <div>
               <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-2" data-animate="fade-up">
-                My role & contributions
+                Meu papel e contribuições
               </h2>
 
               <p
@@ -216,7 +216,7 @@ const getLinkIcon = (label: string) => {
       <span class="flex-1 h-px bg-border-default"></span>
 
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-        Project Highlights
+        Destaques do projeto
       </span>
 
       <span class="flex-1 h-px bg-border-default"></span>
@@ -229,43 +229,44 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <!-- Text -->
             <div data-animate="fade-up">
-              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Economy & Progression Systems Design</h3>
-              <!-- Highlight Subtitle -->
-              <p
-                class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
-                Game Design · Economy · Progression · Simulation
+              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Sistemas de Economia e Progressão</h3>
+
+              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
+                Game design · Economia · Progressão · Simulação
               </p>
 
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
+                  <p class="font-semibold text-text-primary mb-1">🟥 O problema</p>
                   <p>
-                    The entire game experience is menu based, around purchases, resource management, and XP progression.
+                    Toda a experiência do jogo acontece por meio de menus, com foco em compras, gestão de recursos e progressão por XP.
                   </p>
-                  <p>With 400+ items, each containing unique values, recurring expenses, and XP rewards.</p>
+                  <p>
+                    O jogo tem mais de 400 itens, e cada um possui valores específicos, despesas recorrentes e recompensas de XP.
+                  </p>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1 mt-2">🟨 What I did</p>
+                  <p class="font-semibold text-text-primary mb-1 mt-2">🟨 O que eu fiz</p>
 
-                  <p class="mb-4">I designed and balanced the economic and progression system:</p>
+                  <p class="mb-4">Estruturei e balanceei o sistema de economia e progressão:</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Structured and managed a centralized spreadsheet with 400+ item variables</li>
-                    <li>Modeled income sources, expenses, and investment returns</li>
-                    <li>Designed XP thresholds and level unlock logic across five progression tiers</li>
-                    <li>Applied value distribution formulas to maintain curve consistency</li>
-                    <li>Tuned early-game economy to prevent inflation or stagnation</li>
-                    <li>Controlled unlock pacing to regulate complexity exposure</li>
+                    <li>Estruturei e mantive uma planilha central com variáveis de mais de 400 itens</li>
+                    <li>Modelei fontes de renda, despesas e retorno de investimentos</li>
+                    <li>Desenhei metas de XP e lógica de desbloqueio de níveis em cinco faixas de progressão</li>
+                    <li>Apliquei fórmulas de distribuição de valores para manter consistência na curva</li>
+                    <li>Ajustei a economia do início do jogo para evitar inflação ou estagnação</li>
+                    <li>Controlei o ritmo de desbloqueios para dosar exposição à complexidade</li>
                   </ul>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impact [LiveOps]</p>
+                  <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impacto (LiveOps)</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                    <li>Stable economic loop with controlled resource circulation</li>
-                    <li>Consistent progression curve across all five tiers</li>
-                    <li>Predictable yet flexible scaling for future content additions</li>
-                    <li>Reduced risk of inflation, soft-locks, or progression breaks</li>
+                    <li>Loop econômico estável, com circulação de recursos sob controle</li>
+                    <li>Curva de progressão consistente nas cinco faixas</li>
+                    <li>Escala previsível e flexível para adicionar novos conteúdos</li>
+                    <li>Menor risco de inflação, travas de progressão ou quebras no fluxo</li>
                   </ul>
                 </div>
               </div>
@@ -282,7 +283,7 @@ const getLinkIcon = (label: string) => {
                     <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden">
                       <img
                         src={src}
-                        alt={`Investor vertical ${i + 1}`}
+                        alt={`Menu do Investor ${i + 1}`}
                         class="absolute inset-0 w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -295,6 +296,7 @@ const getLinkIcon = (label: string) => {
         </div>
       </div>
     </section>
+
     <!-- Highlight 02 -->
     <section class="py-5 md:py-16">
       <div class="container">
@@ -302,16 +304,14 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <!-- LEFT SIDE -->
             <div class="flex flex-col gap-0">
-              <!-- Static Image -->
               <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                <img src="/img/investor/blocky.gif" alt="Origami Island overview" class="w-full object-cover" />
+                <img src="/img/investor/blocky.gif" alt="Exemplo de lógica no Blockly" class="w-full object-cover" />
               </div>
 
-              <!-- Static Image -->
               <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
                 <img
                   src="/img/investor/blocky2.gif"
-                  alt="Origami Island overview"
+                  alt="Exemplo de lógica no Blockly"
                   class="w-full h-[350px] object-cover object-top"
                 />
               </div>
@@ -320,37 +320,36 @@ const getLinkIcon = (label: string) => {
             <!-- Text (Right) -->
             <div data-animate="fade-up">
               <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                Technical Design & Implementation (Blockly)
+                Design Técnico e Implementação com Blockly
               </h3>
 
               <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left">
-                Game Design · Technical Design · Systems Implementation
+                Game design · Design técnico · Implementação de sistemas
               </p>
 
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
-                  <p class="font-semibold text-text-primary mb-3">🟨 System Limitation</p>
-                  <p class="mb-2">The entire Tindin platform is built on Blockly-based programming.</p>
+                  <p class="font-semibold text-text-primary mb-3">🟨 Limitação do sistema</p>
+                  <p class="mb-2">Toda a plataforma da Tindin é baseada em programação com Blockly.</p>
                   <p class="mb-2">
-                    The small team and tight deadlines required hands-on implementation of several core systems.
+                    O time pequeno e os prazos curtos exigiram implementação direta de vários sistemas centrais.
                   </p>
                   <p class="mb-2">
-                    Working with block based logic demanded a different approaches,due to its constraints.
+                    Trabalhar com lógica em blocos exigiu outra abordagem por conta das limitações.
                   </p>
                   <p class="mb-2">
-                    This made clear algorithm planning, system breakdown, and documentation essential to ensure reliable
-                    gameplay behavior.
+                    Isso deixou claro que planejamento de algoritmos, quebra de sistemas e documentação eram essenciais para garantir comportamento confiável.
                   </p>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mt-2 mb-3">🟩 Using Blockly, I implemented</p>
+                  <p class="font-semibold text-text-primary mt-2 mb-3">🟩 Usando Blockly, eu implementei:</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                    <li>Quest validation and progression systems</li>
-                    <li>Camera focus logic tied to building interactions and contextual dialogues</li>
-                    <li>Menu systems dynamically linked to their corresponding buildings</li>
-                    <li>A structured item catalog (icons, categories, subcategories, and values)</li>
-                    <li>Enterprise purchase logic integrated into the economy system</li>
+                    <li>Sistemas de validação de quests e progressão</li>
+                    <li>Lógica de foco de câmera ligada a interações em prédios e diálogos contextuais</li>
+                    <li>Menus dinâmicos conectados aos prédios correspondentes</li>
+                    <li>Catálogo estruturado de itens (ícones, categorias, subcategorias e valores)</li>
+                    <li>Lógica de compra de empreendimentos integrada ao sistema econômico</li>
                   </ul>
                 </div>
               </div>
@@ -364,34 +363,34 @@ const getLinkIcon = (label: string) => {
     <div class="flex items-center gap-4 my-3" data-animate="fade-up">
       <span class="flex-1 h-px bg-border-default"></span>
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-        Other Design Contributions
+        Outras contribuições de design
       </span>
       <span class="flex-1 h-px bg-border-default"></span>
     </div>
   </main>
 
   <!-- Other Highlights -->
-  <section class="mt-10">
+  <section class="mt-8 mb-8">
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card 1 -->
         <div class="bg-bg-card border border-border-default rounded-2xl p-5">
           <img src="/img/investor/cycle.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-          <p class="text-sm font-semibold text-text-primary mb-3">Navigation & Player Flow</p>
+          <p class="text-sm font-semibold text-text-primary mb-3">Navegação e Fluxo do Jogador</p>
 
           <ul class="space-y-2 text-sm text-text-secondary">
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Connecting interaction buildings, menus, and camera focus</span>
+              <span>Conexão entre prédios interativos, menus e foco de câmera</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Consistent navigation paths regardless of entry point</span>
+              <span>Caminhos de navegação consistentes, independentemente do ponto de entrada</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Clear mental model despite a high number of interactive options</span>
+              <span>Modelo mental claro mesmo com muitas opções de interação</span>
             </li>
           </ul>
         </div>
@@ -400,42 +399,42 @@ const getLinkIcon = (label: string) => {
         <div class="bg-bg-card border border-border-default rounded-2xl p-5">
           <img src="/img/investor/investor.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-          <p class="text-sm font-semibold text-text-primary mb-3">Instant Feedback & Gameflow</p>
+          <p class="text-sm font-semibold text-text-primary mb-3">Feedback Imediato e Ritmo do Jogo</p>
 
           <ul class="space-y-2 text-sm text-text-secondary">
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Real-time feedback for purchases</span>
+              <span>Feedback em tempo real para compras</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Clear patrimony overview with categorized income and expense</span>
+              <span>Visão clara do patrimônio com renda e despesa categorizadas</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Smooth pacing supported by continuous feedback loops</span>
+              <span>Ritmo fluido sustentado por ciclos contínuos de feedback</span>
             </li>
           </ul>
         </div>
 
         <!-- Card 3 -->
         <div class="bg-bg-card border border-border-default rounded-2xl p-5">
-          <img src="/img/investor/cycle.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
+          <img src="/img/investor/investor2.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-          <p class="text-sm font-semibold text-text-primary mb-3">Creative Design</p>
+          <p class="text-sm font-semibold text-text-primary mb-3">Design Criativo</p>
 
           <ul class="space-y-2 text-sm text-text-secondary">
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Designed item naming, descriptions, and thematic coherence across 400+ assets</span>
+              <span>Criação de nomes, descrições e coerência temática em mais de 400 assets</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Translated Maslow’s hierarchy into a structured progression</span>
+              <span>Tradução da hierarquia de Maslow em uma progressão estruturada</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Maintained a collaborative item spreadsheet used by the entire team</span>
+              <span>Manutenção de planilha colaborativa de itens usada por todo o time</span>
             </li>
           </ul>
         </div>
@@ -443,6 +442,7 @@ const getLinkIcon = (label: string) => {
     </div>
   </section>
 </BaseLayout>
+
 <Footer />
 
 <script>
@@ -530,10 +530,8 @@ const getLinkIcon = (label: string) => {
     start();
   };
 
-  // auto-init: pega todos os sliders da página
   document.querySelectorAll('[data-slider]').forEach((el) => {
     const id = el.getAttribute('data-slider');
     if (id) setupSlider(id);
-    //if (id) setupSlider(id, 2000);
   });
 </script>

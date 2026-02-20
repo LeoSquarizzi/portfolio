@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import GameCard from '../../../components/GameCard.astro';
+import Button from '../../../components/Button.astro';
+
+const games = [
+  {
+    title: 'Tindin Metaverso',
+    subtitle: "Game Designer · Level Designer",
+    highlights: [
+      "Design de sistemas e balanceamento do jogo",
+      "Design de quests e recompensas",
+      "Level Design do metaverso principal",
+    ],
+    tags: ['2D Multiplayer', 'Simulador', 'Mobile', 'PC'],
+    href: '/games/tindinmetaverse',
+    image: '/img/projects/tindin.png',
+    hoverImage: '/img/projects/tindingif.gif',
+  },
+  {
+    title: 'O Jogo do Investidor', 
+    subtitle: "Lead Game Designer · Level Designer",
+    highlights: [
+      "Design de gameplay e economia do jogo",
+      "Sistema de quests e itens",
+      "Level design e fluxo de interação da cidade",
+    ],
+    tags: ['2D Multiplayer', 'Manager', 'Mobile', 'PC'],
+    href: '/games/investorsgame',
+    image: '/img/projects/invest.png',
+    hoverImage: '/img/projects/invest.gif',
+  },
+  {
+    title: 'Literama',
+    subtitle: "Lead Game Designer",  
+    highlights: [
+      "Lead da equipe de Game Design",
+      "Level design e estrutura de quests",
+      "Ajustes de gameflow e direcionamento de UX"
+    ],
+    tags: ['2D Multiplayer', 'Aventura', 'Mobile', 'PC'],
+    href: '/games/literama',
+    image: '/img/projects/literama.jpg',
+    hoverImage: '/img/projects/literamagif.gif',
+  },
+  {
+    title: 'Save the Boat', 
+    subtitle: "Desenvolvedor Solo",   
+    highlights: [
+      "Game design e desenvolvimento solo",
+      "Sistemas de gameplay e IA de inimigos",
+      "Design de mecânicas de Boss Fight"
+    ],    
+    tags: ['2D', 'Arcade', 'Unity', 'Mobile'],
+    href: '/games/savetheboat',
+    image: '/img/projects/boat.png',
+    hoverImage: '/img/projects/boatgif.gif',
+  },
+  {
+    title: 'Orbit Ball',  
+    subtitle: "Desenvolvedor Solo",
+    highlights: [
+      "Estudo de caso em acessibilidade",
+      "Gameplay acessível para uma mão",
+      "Ajuste de desafio e curva de dificuldade"
+    ],
+    tags: ['2D', 'Casual', 'Unity', 'Mobile'],
+    href: '/games/orbitball',
+    image: '/img/projects/orbitball.jpg',
+    hoverImage: '/img/projects/orbitballgif.gif',
+  },
+  {
+    title: 'Rivals Showdown',
+    subtitle: "Game Developer  · Game Designer",  
+    highlights: [
+      "Design de mecânicas essenciais",
+      "Estrutura de IA e tomada decisões ",
+      "Sistema de formações e rotas dos jogadores"
+    ],    
+    tags: ['3D', 'Esporte', 'Unity', 'Mobile'],
+    href: '/games/rivalsshowdown',
+    image: '/img/projects/gameday.png',
+    hoverImage: '/img/projects/gamedaygif.gif',
+  },
+  {
+    title: 'Everything Ends in Pizza',
+    subtitle: "Game Developer  · Game Designer",
+    highlights: [
+      "Design e balanceamento de minigames",
+      "Programação de gameplay na Unity",
+      "Gestão de assets e documentação"
+    ],
+    tags: ['2D', 'Runner', 'Unity', 'Mobile'],
+    href: '/games/pizza',
+    image: '/img/projects/pizza.png',
+    hoverImage: '/img/projects/pizzagif.gif',
+  },
+];
+---
+
+<BaseLayout title="Leonardo Squarizzi - Game Design e Desenvolvimento de Jogos" description="Game Designer e Game Developer apaixonado por criar coisas novas.">
+  <Header currentPage="games" />
+
+  <main class="pt-[72px]">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-bg-primary">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-6" data-animate="fade-up">
+            Projetos de Jogos
+          </h1>
+          <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-animate="fade-up" data-delay="100">
+            Projetos nos quais atuei em diferentes funções, plataformas e gêneros.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {games.map((game, index) => (
+            <div data-animate="fade-up" data-delay={10 + index * 40}>
+              <GameCard {...game} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

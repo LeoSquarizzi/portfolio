@@ -8,28 +8,43 @@ interface Props {
 const { currentPage = 'home' } = Astro.props;
 
 // Fetch total stars for the organization at build time
-const totalStars = await getOrgTotalStars('proyecto26');
+const totalStars = await getOrgTotalStars('leosquarizzi');
 const starsDisplay = totalStars > 0 ? formatStars(totalStars) : '4.5k'; // Fallback
 
-//   { href: '/projects', label: 'Projects', id: 'projects' },
-const navLinks = [
+// Language (based on current route)
+const isPT = Astro.url.pathname.startsWith('/pt');
+const langPrefix = isPT ? '/pt' : '';
+
+// Base nav links (unprefixed)
+const baseNavLinks = [
   { href: '/games', label: 'Games', id: 'games' },
   { href: '/about', label: 'About', id: 'about' },
   { href: '/contact', label: 'Contact', id: 'contact' },
 ];
 
+// Prefixed nav links (match current language route)
+const navLinks = baseNavLinks.map((l) => ({ ...l, href: `${langPrefix}${l.href}` }));
+
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/leonardo-squarizzi', icon: 'linkedin', label: 'LinkedIn' },
   { href: 'https://github.com/leosquarizzi', icon: 'github', label: 'GitHub' },
-  { href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.', icon: 'mail', label: 'Email' },
+  {
+    href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.',
+    icon: 'mail',
+    label: 'Email',
+  },
 ];
 ---
 
 <header class="header fixed top-0 left-0 right-0 z-header h-[72px] bg-bg-primary/80 backdrop-blur-custom border-b border-border-subtle transition-all duration-300">
   <div class="container h-full flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="logo-link flex items-center gap-3 group">
-      <img src="/img/miniicon.jpg" alt="Leonardo Squarizzi" class="w-10 h-10 rounded-lg transition-all duration-300 group-hover:shadow-glow-coral group-hover:scale-105" />
+    <a href={isPT ? "/pt/" : "/"} class="logo-link flex items-center gap-3 group">
+      <img
+        src="/img/miniicon.jpg"
+        alt="Leonardo Squarizzi"
+        class="w-10 h-10 rounded-lg transition-all duration-300 group-hover:shadow-glow-coral group-hover:scale-105"
+      />
       <span class="text-lg font-bold text-text-primary hidden sm:block">Leonardo Squarizzi</span>
     </a>
 
@@ -40,9 +55,7 @@ const socialLinks = [
           href={link.href}
           class:list={[
             'nav-link text-sm font-medium transition-colors duration-200 relative',
-            currentPage === link.id
-              ? 'text-accent-coral'
-              : 'text-text-secondary hover:text-text-primary'
+            currentPage === link.id ? 'text-accent-coral' : 'text-text-secondary hover:text-text-primary',
           ]}
         >
           {link.label}
@@ -53,6 +66,37 @@ const socialLinks = [
 
     <!-- Actions -->
     <div class="flex items-center gap-3">
+      <!-- Language Toggle -->
+      <div
+        id="lang-toggle"
+        class="hidden sm:flex items-center rounded-lg border border-border-default bg-bg-hover p-1"
+        aria-label="Language toggle"
+      >
+        <button
+          type="button"
+          data-lang="en"
+          class:list={[
+            'px-3 py-1 rounded-md text-sm font-medium transition-all duration-200',
+            !isPT ? 'bg-bg-card text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary',
+          ]}
+          onclick="toggleLang('en')"
+        >
+          EN
+        </button>
+
+        <button
+          type="button"
+          data-lang="pt"
+          class:list={[
+            'px-3 py-1 rounded-md text-sm font-medium transition-all duration-200',
+            isPT ? 'bg-bg-card text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary',
+          ]}
+          onclick="toggleLang('pt')"
+        >
+          PT
+        </button>
+      </div>
+
       <!-- Theme Toggle 
       <button
         data-dragon-trigger
@@ -135,6 +179,19 @@ const socialLinks = [
 <!-- Mobile menu overlay -->
 <div id="mobile-overlay" class="md:hidden fixed inset-0 bg-black/90 opacity-0 pointer-events-none transition-opacity duration-300 z-overlay"></div>
 
+<script is:inline>
+  window.toggleLang = function (lang) {
+    localStorage.setItem('lang', lang);
+
+    const path = window.location.pathname;
+    const isPT = path.startsWith('/pt');
+    const cleanPath = isPT ? path.replace(/^\/pt(?=\/|$)/, '') : path;
+
+    const target = lang === 'pt' ? `/pt${cleanPath || '/'}` : (cleanPath || '/');
+    window.location.href = target;
+  };
+</script>
+
 <script>
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -177,7 +234,6 @@ const socialLinks = [
 
   // Header scroll behavior
   const header = document.querySelector('.header');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
@@ -187,7 +243,5 @@ const socialLinks = [
     } else {
       header?.classList.remove('bg-bg-primary/95');
     }
-
-    lastScroll = currentScroll;
   });
 </script>

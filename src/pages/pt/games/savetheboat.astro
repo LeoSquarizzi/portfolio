@@ -7,7 +7,8 @@ import Button from '../../../components/Button.astro';
 const game = {
   title: 'Save the Boat',
   tagline: 'Arcade · Casual · 2D · Mobile',
-  shortDescription: 'A fast-paced mobile arcade game focused on players speed with enemy patterns and boss mechanics.',
+  shortDescription:
+    'Um jogo arcade para celular, dinâmico e focado na velocidade do jogador, com padrões de inimigos e mecânicas de chefes.',
   snapshop: {
     developer: 'Talking Capybara [Solo Dev]',
     timeOnProject: '1 month',
@@ -105,21 +106,21 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-10" data-animate="fade-up" data-delay="160">
             <!-- Box Snapshot -->
             <div class="bg-bg-card border border-border-default rounded-2xl p-6">
-              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">Project Snapshot</p>
+              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-4">Resumo do Projeto</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span><span class="text-text-muted">Developer:</span> {game.snapshop.developer}</span>
+                  <span><span class="text-text-muted">Desenvolvedor:</span> {game.snapshop.developer}</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span><span class="text-text-muted">Engine:</span> {game.snapshop.engine}</span>
+                  <span><span class="text-text-muted">Motor:</span> {game.snapshop.engine}</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span><span class="text-text-muted">Time on project:</span> {game.snapshop.timeOnProject}</span>
-                </li>                
+                  <span><span class="text-text-muted">Tempo no Projeto:</span> {game.snapshop.timeOnProject}</span>
+                </li>
               </ul>
             </div>
 
@@ -158,7 +159,7 @@ const getLinkIcon = (label: string) => {
       <span class="flex-1 h-px bg-border-default"></span>
 
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-        Project Highlights
+        Destaques do Projeto
       </span>
 
       <span class="flex-1 h-px bg-border-default"></span>
@@ -171,51 +172,51 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <!-- Text -->
             <div data-animate="fade-up">
-              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Core Combat & Boss Systems</h3>
+              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Sistemas de Combate e Chefes</h3>
               <!-- Highlight Subtitle -->
               <p
                 class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
-                Game Design · Systems Design · Enemy AI
+                Game Design · Design de Sistemas · IA de Inimigos
               </p>
 
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
+                  <p class="font-semibold text-text-primary mb-1">🟥 O Problema</p>
                   <p>
-                    The game needed to remain simple and mobile-friendly while still offering depth and increasing
-                    challenge.
+                    O jogo precisava continuar simples e amigável para celular, mas ainda assim oferecer profundidade e
+                    desafio crescente.
                   </p>
                   <p>
-                    The core gameplay relied entirely on enemy behavior patterns, meaning variety and progression had to
-                    emerge from movement logic rather than complex mechanics.
+                    O gameplay central dependia totalmente de padrões de comportamento dos inimigos. A variedade e a
+                    progressão precisavam surgir da lógica de movimento, e não de mecânicas complexas.
                   </p>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟨 What I did</p>
-                  <p class="mb-2">I designed and implemented all combat systems and enemy behaviors.</p>
+                  <p class="font-semibold text-text-primary mb-1">🟨 O Que Fiz</p>
+                  <p class="mb-2">Desenhei e implementei todos os sistemas de combate e os comportamentos dos inimigos.</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Developed enemy spawning logic and difficulty scaling</li>
-                    <li>Designed unique boss mechanics with pattern vulnerabilities</li>
-                    <li>Implemented health-based behavior changes and escalation logic</li>
-                    <li>Built state machines for enemies, bosses, and event triggers</li>
+                    <li>Criei a lógica de spawn de inimigos e o escalonamento de dificuldade</li>
+                    <li>Desenhei mecânicas únicas de chefes com vulnerabilidades baseadas em padrões</li>
+                    <li>Implementei mudanças de comportamento baseadas em vida e lógica de escalada</li>
+                    <li>Montei state machines para inimigos, chefes e gatilhos de eventos</li>
                   </ul>
 
-                  <p class="mb-2 mt-5">Each boss introduced a distinct mechanic:</p>
+                  <p class="mb-2 mt-5">Cada chefe introduzia uma mecânica distinta:</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Timing based vulnerability windows</li>
-                    <li>Visibility manipulation</li>
-                    <li>Reaction based dive attacks</li>
-                    <li>Aggression scaling tied to HP thresholds</li>
+                    <li>Janelas de vulnerabilidade baseadas em tempo</li>
+                    <li>Manipulação de visibilidade</li>
+                    <li>Ataques de mergulho baseados em reação</li>
+                    <li>Agressividade escalonada a partir de limites de HP</li>
                   </ul>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mt-2 mb-2">🟩 Result</p>
+                  <p class="font-semibold text-text-primary mt-2 mb-2">🟩 Resultado</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                    <li>High gameplay variety using simple core mechanics</li>
-                    <li>Progressive difficulty without increasing mechanical complexity</li>
-                    <li>Strong boss identity within a minimalistic arcade structure</li>
+                    <li>Alta variedade de gameplay usando mecânicas centrais simples</li>
+                    <li>Dificuldade progressiva sem aumentar a complexidade das mecânicas</li>
+                    <li>Identidade forte de chefes dentro de uma estrutura arcade minimalista</li>
                   </ul>
                 </div>
               </div>
@@ -299,41 +300,41 @@ const getLinkIcon = (label: string) => {
             <!-- Text -->
             <div data-animate="fade-up">
               <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                Systems Implementation & Gameplay Architecture
+                Implementação de Sistemas e Arquitetura de Gameplay
               </h3>
               <!-- Highlight Subtitle -->
               <p
                 class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
-                Unity · State Machines · Event Systems
+                Unity · State Machines · Sistemas de Eventos
               </p>
 
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟥 The problem</p>
+                  <p class="font-semibold text-text-primary mb-1">🟥 O Problema</p>
                   <p>
-                    As a solo developer, all gameplay systems needed to be modular and maintainable to support rapid
-                    iteration within a short production timeline.
+                    Como solo dev, todos os sistemas de gameplay precisavam ser modulares e fáceis de manter para suportar
+                    iterações rápidas em um cronograma curto.
                   </p>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mb-1">🟨 What I did</p>
-                  <p class="mb-2">I designed and implemented all combat systems and enemy behaviors.</p>
+                  <p class="font-semibold text-text-primary mb-1">🟨 O Que Fiz</p>
+                  <p class="mb-2">Desenhei e implementei todos os sistemas de combate e os comportamentos dos inimigos.</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Built player movement and attribute systems</li>
-                    <li>Designed event spawn routines for enemies and power ups</li>
-                    <li>Implemented state machines for combat behaviors</li>
-                    <li>Structured reusable spawning logic and trigger systems</li>
-                    <li>Assembled UI and adapted visual assets</li>
+                    <li>Construí sistemas de movimento e atributos do jogador</li>
+                    <li>Desenhei rotinas de spawn para inimigos e power ups</li>
+                    <li>Implementei state machines para comportamentos de combate</li>
+                    <li>Estruturei lógica de spawn reutilizável e sistemas de gatilhos</li>
+                    <li>Montei a UI e adaptei os assets visuais</li>
                   </ul>
                 </div>
 
                 <div>
-                  <p class="font-semibold text-text-primary mt-2 mb-2">🟩 Result</p>
+                  <p class="font-semibold text-text-primary mt-2 mb-2">🟩 Resultado</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
-                    <li>Clean gameplay architecture supporting rapid iteration</li>
-                    <li>Stable enemy scaling and event difficulty control</li>
-                    <li>Solo production cycle within one month</li>
+                    <li>Arquitetura de gameplay limpa, com suporte a iterações rápidas</li>
+                    <li>Escalonamento de inimigos estável e controle de dificuldade de eventos</li>
+                    <li>Ciclo de produção solo concluído em um mês</li>
                   </ul>
                 </div>
               </div>
@@ -347,7 +348,7 @@ const getLinkIcon = (label: string) => {
     <div class="flex items-center gap-4 my-3" data-animate="fade-up">
       <span class="flex-1 h-px bg-border-default"></span>
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-        Other Design Contributions
+        Outras Contribuições de Design
       </span>
       <span class="flex-1 h-px bg-border-default"></span>
     </div>
@@ -360,20 +361,20 @@ const getLinkIcon = (label: string) => {
           <div class="bg-bg-card border border-border-default rounded-2xl p-5">
             <img src="/img/savetheboat/gdd.jpg" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-            <p class="text-sm font-semibold text-text-primary mb-3">Technical Structure</p>
+            <p class="text-sm font-semibold text-text-primary mb-3">Estrutura Técnica</p>
 
             <ul class="space-y-2 text-sm text-text-secondary">
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Used ScriptableObjects to define enemies, events, and gameplay parameter</span>
+                <span>Usei ScriptableObjects para definir inimigos, eventos e parâmetros de gameplay</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Applied inheritance patterns for enemies, items, and event behaviors</span>
+                <span>Apliquei padrões de herança para inimigos, itens e comportamentos de eventos</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Implemented real-time spawn direction control and event-based spawning logic</span>
+                <span>Implementei controle de direção de spawn em tempo real e lógica de spawn baseada em eventos</span>
               </li>
             </ul>
           </div>
@@ -382,20 +383,20 @@ const getLinkIcon = (label: string) => {
           <div class="bg-bg-card border border-border-default rounded-2xl p-5">
             <img src="/img/savetheboat/danger.png" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-            <p class="text-sm font-semibold text-text-primary mb-3">Difficulty & Spawn Tuning</p>
+            <p class="text-sm font-semibold text-text-primary mb-3">Ajuste de Dificuldade e Spawns</p>
 
             <ul class="space-y-2 text-sm text-text-secondary">
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Sequenced progressive enemy spawn routines</span>
+                <span>Sequenciei rotinas progressivas de spawn de inimigos</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Pacing control based on speed and quantity</span>
+                <span>Controlei o ritmo com base em velocidade e quantidade</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Adjusted time windows for reaction</span>
+                <span>Ajustei janelas de tempo para reação</span>
               </li>
             </ul>
           </div>
@@ -404,20 +405,20 @@ const getLinkIcon = (label: string) => {
           <div class="bg-bg-card border border-border-default rounded-2xl p-5">
             <img src="/img/savetheboat/save.png" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-            <p class="text-sm font-semibold text-text-primary mb-3">Playtesting & Iteration</p>
+            <p class="text-sm font-semibold text-text-primary mb-3">Playtest e Iteração</p>
 
             <ul class="space-y-2 text-sm text-text-secondary">
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Identified issues through testing and debug</span>
+                <span>Identifiquei problemas com testes e debug</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Adjusted spawn validation and control</span>
+                <span>Ajustei validação de spawn e controle</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                <span>Fast adjustments for rapid iterations</span>
+                <span>Fiz ajustes rápidos para iterações aceleradas</span>
               </li>
             </ul>
           </div>
