@@ -78,11 +78,11 @@ npx astro add typescript
 
 ```json
 {
-  "name": "proyecto26-website",
+  "name": "leosquarizzi-portfolio",
   "type": "module",
   "version": "2.0.0",
-  "description": "Proyecto 26 - Changing the world with small contributions",
-  "author": "Juan David Nicholls <jdnichollsc@gmail.com>",
+  "description": "Game Designer and Indie Game Developer",
+  "author": "Leonardo Squarizzi <leosquarizzi@gmail.com>",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -124,7 +124,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   // Site URL for GitHub Pages
-  site: 'https://proyecto26.com',
+  site: 'https://leosquarizzi.com',
 
   // Base path (root for custom domain)
   base: '/',

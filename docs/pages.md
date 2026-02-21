@@ -367,16 +367,16 @@ Display one game prominently with a preview (GIF or video loop).
 
 ```javascript
 const founder = {
-  name: 'Juan David Nicholls',
-  role: 'Founder & Lead Developer',
-  bio: 'Full-Stack Developer and Open Source Contributor with over 14 years of expertise in web, mobile, game, blockchain and cloud development. Skilled in building scalable architectures, seamless user experiences and driving innovation through Open Source. Passionate about sharing knowledge as a speaker and mentor.',
+  name: 'Leonardo Squarizzi',
+  role: 'Game Designer e Game Developer',
+  bio: 'Game Designer with a degree in Digital Games and a postgraduate background in Games and Gamification. With years of experience designing game systems, progression, and player flows, with development experience in prototypes, indies, mobile and educational projects.',
   location: 'Colombia',
   image: '/img/leosuarizzi.jpg',
   social: {
     linkedin: 'https://www.linkedin.com/in/leonardo-squarizzi/',
     github: 'https://github.com/LeoSquarizzi',
-    twitter: 'https://x.com/jdnichollsc',
-    stackoverflow: 'https://stackoverflow.com/users/jdnichollsc',
+    twitter: 'https://x.com/leosquarizzi',
+    stackoverflow: 'https://stackoverflow.com/users/leosquarizzi',
   },
 };
 ```
