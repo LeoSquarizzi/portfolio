@@ -29,12 +29,12 @@ const game = {
   resp_midia: '/img/investor/investortrailer.mp4',
 
   responsibilities: [
-    'Responsável pelo design de sistemas e pela economia do jogo',
+    'Responsável pelo design de sistemas e economia do jogo',
     'Design de quests e progressão',
     'Level design da cidade e fluxo de interação',
     'Balanceamento da economia (salário, itens, investimentos, empreendimentos)',
     'Criação e gestão de mais de 400 itens dentro do jogo',
-    'Colaboração com UI e UX para sistemas de menus complexos',
+    'Colaboração com UI/UX para sistemas de menus complexos',
   ],
   role: 'Lead Game Designer · Balanceamento · Level Designer',
 };
@@ -212,7 +212,7 @@ const getLinkIcon = (label: string) => {
     </section>
 
     <!-- Divider -->
-    <div class="flex items-center gap-4 my-12" data-animate="fade-up">
+    <div class="flex items-center gap-4 mt-6" data-animate="fade-up">
       <span class="flex-1 h-px bg-border-default"></span>
 
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
@@ -238,11 +238,11 @@ const getLinkIcon = (label: string) => {
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟥 O problema</p>
-                  <p>
+                  <p class="mb-2">
                     Toda a experiência do jogo acontece por meio de menus, com foco em compras, gestão de recursos e progressão por XP.
                   </p>
                   <p>
-                    O jogo tem mais de 400 itens, e cada um possui valores específicos, despesas recorrentes e recompensas de XP.
+                    O jogo tem mais de 400 itens, com valores específicos, despesas recorrentes e XP.
                   </p>
                 </div>
 
@@ -251,12 +251,12 @@ const getLinkIcon = (label: string) => {
 
                   <p class="mb-4">Estruturei e balanceei o sistema de economia e progressão:</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Estruturei e mantive uma planilha central com variáveis de mais de 400 itens</li>
+                    <li>Estruturei e atualizei a documentação com todos os itens</li>
                     <li>Modelei fontes de renda, despesas e retorno de investimentos</li>
-                    <li>Desenhei metas de XP e lógica de desbloqueio de níveis em cinco faixas de progressão</li>
+                    <li>Desenhei metas de XP e lógica de desbloqueio de níveis</li>
                     <li>Apliquei fórmulas de distribuição de valores para manter consistência na curva</li>
-                    <li>Ajustei a economia do início do jogo para evitar inflação ou estagnação</li>
-                    <li>Controlei o ritmo de desbloqueios para dosar exposição à complexidade</li>
+                    <li>Ajustei a economia do jogo para evitar inflação ou estagnação</li>
+                    <li>Controlei o ritmo de jogo para dosar exposição à complexidade</li>
                   </ul>
                 </div>
 
@@ -264,7 +264,7 @@ const getLinkIcon = (label: string) => {
                   <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impacto (LiveOps)</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
                     <li>Loop econômico estável, com circulação de recursos sob controle</li>
-                    <li>Curva de progressão consistente nas cinco faixas</li>
+                    <li>Curva de progressão consistente durante o jogo</li>
                     <li>Escala previsível e flexível para adicionar novos conteúdos</li>
                     <li>Menor risco de inflação, travas de progressão ou quebras no fluxo</li>
                   </ul>
@@ -330,15 +330,15 @@ const getLinkIcon = (label: string) => {
               <div class="space-y-5 text-text-secondary text-sm md:text-base">
                 <div>
                   <p class="font-semibold text-text-primary mb-3">🟨 Limitação do sistema</p>
-                  <p class="mb-2">Toda a plataforma da Tindin é baseada em programação com Blockly.</p>
+                  <p class="mb-2">Toda a plataforma da Tindin é baseada em programação por blocos.</p>
                   <p class="mb-2">
                     O time pequeno e os prazos curtos exigiram implementação direta de vários sistemas centrais.
                   </p>
                   <p class="mb-2">
-                    Trabalhar com lógica em blocos exigiu outra abordagem por conta das limitações.
+                    Trabalhar com lógica em blocos exigiu adaptação por conta das limitações.
                   </p>
                   <p class="mb-2">
-                    Isso deixou claro que planejamento de algoritmos, quebra de sistemas e documentação eram essenciais para garantir comportamento confiável.
+                    O planejamento de algoritmos, quebra de sistemas e documentação eram essenciais para garantir comportamento confiável.
                   </p>
                 </div>
 
@@ -363,7 +363,7 @@ const getLinkIcon = (label: string) => {
     <div class="flex items-center gap-4 my-3" data-animate="fade-up">
       <span class="flex-1 h-px bg-border-default"></span>
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-        Outras contribuições de design
+        Outras contribuições
       </span>
       <span class="flex-1 h-px bg-border-default"></span>
     </div>
@@ -377,12 +377,12 @@ const getLinkIcon = (label: string) => {
         <div class="bg-bg-card border border-border-default rounded-2xl p-5">
           <img src="/img/investor/cycle.gif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-          <p class="text-sm font-semibold text-text-primary mb-3">Navegação e Fluxo do Jogador</p>
+          <p class="text-sm font-semibold text-text-primary mb-3">Navegação e Fluxo de Jogo</p>
 
           <ul class="space-y-2 text-sm text-text-secondary">
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Conexão entre prédios interativos, menus e foco de câmera</span>
+              <span>Conexão entre prédios interativos, menus e câmera</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
@@ -404,7 +404,7 @@ const getLinkIcon = (label: string) => {
           <ul class="space-y-2 text-sm text-text-secondary">
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Feedback em tempo real para compras</span>
+              <span>Feedback em tempo real para interações e atualizações</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
@@ -434,7 +434,7 @@ const getLinkIcon = (label: string) => {
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-              <span>Manutenção de planilha colaborativa de itens usada por todo o time</span>
+              <span>Manutenção de planilhas colaborativas de itens e missões usada por todo o time</span>
             </li>
           </ul>
         </div>

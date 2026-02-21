@@ -34,8 +34,8 @@ const game = {
   resp_midia: '/img/tindin/Tindintrailer.mp4',
 
   responsibilities: [
-    'Documentação de game design e responsabilidade pelos sistemas',
-    'Design de quests e missões (objetivos, recompensas, progressão)',
+    'Documentação e responsabilidade pelos sistemas',
+    'Quests e missões (objetivos, recompensas, progressão)',
     'Design de níveis para distritos e aventuras sazonais',
     'Balanceamento de economia (custos, recompensas, investimentos)',
     'Criação de eventos do jogo',
@@ -183,8 +183,7 @@ const getLinkIcon = (label: string) => {
             <div
               class="bg-bg-card border border-border-default rounded-2xl overflow-hidden"
               data-animate="fade-up"
-              data-delay="120"
-            >
+              data-delay="120">
               <video
                 class="w-full h-full object-cover"
                 src={game.resp_midia}
@@ -193,8 +192,8 @@ const getLinkIcon = (label: string) => {
                 loop
                 playsinline
                 preload="metadata"
-                controls
-              />
+                controls>
+              </video>
             </div>
             <!-- Right: text -->
             <div>
@@ -242,8 +241,9 @@ const getLinkIcon = (label: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <!-- Text -->
             <div data-animate="fade-up">
-              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Novo design do mapa do jogo</h3>
-              <p class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
+              <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">Level Design do Metaverso</h3>
+              <p
+                class="text-xs font-semibold text-accent-coral uppercase tracking-widest mb-5 text-left max-w-6xl mx-auto">
                 Level Desgin · Progressão · UX
               </p>
 
@@ -251,24 +251,30 @@ const getLinkIcon = (label: string) => {
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟥 O problema</p>
                   <p>
-                    O layout original da cidade prejudicava performance e fluxo do jogador, com áreas de desafio pouco claras
-                    e organização espacial confusa.
+                    O layout original da cidade prejudicava performance e fluxo do jogador, com áreas de desafio pouco
+                    claras e visual desinteressante.
                   </p>
                   <span class="text-[13px] font-medium text-text-muted/80 tracking-wide">[Imagem 1]</span>
                 </div>
 
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟨 O que eu fiz</p>
-                  <p>
-                    Reestruturei a cidade em distritos bem definidos, criei identidade visual com padronização por cores e
-                    implementei um sistema de viagem rápida para melhorar navegação.
-                  </p>
+                  <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
+                    <li>Reestruturei a cidade em distritos bem definidos</li>
+                    <li>Criei identidade visual com padronização por cores</li>
+                    <li>Separei por conteúdos (Educação, Saúde, etc)</li>
+                    <li>Implementei um sistema de viagem rápida para melhorar navegação.</li>
+                  </ul>
                 </div>
 
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟩 Impacto</p>
                   <p>
-                    A nova estrutura melhorou imersão, escalabilidade e engajamento, e virou a base para futuras atualizações e eventos.
+                    A nova estrutura melhorou imersão, escalabilidade e engajamento, e virou a base para futuras
+                    atualizações e eventos.
+                  </p>
+                  <p>
+                    Além disso facilitou o entendimento dos usuários e interatividade com o cenário.
                     <span class="text-[13px] font-medium text-text-muted/80 tracking-wide">[Imagens 2 a 6]</span>
                   </p>
                 </div>
@@ -392,7 +398,11 @@ const getLinkIcon = (label: string) => {
 
                   <!-- Static Image -->
                   <div class="bg-bg-card border border-border-default rounded-2xl overflow-hidden">
-                    <img src="/img/tindin/origamifull.png" alt="Visão geral da Ilha do Origami" class="w-full object-cover" />
+                    <img
+                      src="/img/tindin/origamifull.png"
+                      alt="Visão geral da Ilha do Origami"
+                      class="w-full object-cover"
+                    />
                   </div>
                 </div>
 
@@ -410,41 +420,44 @@ const getLinkIcon = (label: string) => {
                     <div>
                       <p class="font-semibold text-text-primary mb-1">🟥 O problema</p>
                       <p>
-                        O metaverso dependia de vários mapas desconectados, com telas de carregamento frequentes e conteúdo muito voltado para escola.
+                        O metaverso dependia de vários mapas desconectados, conteúdo repetitivo e muito voltado para
+                        escola.
                       </p>
-                      <p>
-                        Isso gerava desinteresse, navegação fragmentada e pouco engajamento ao longo do tempo.
-                      </p>
+                      <p>Isso gerava desinteresse, pouco engajamento ao longo do tempo e baixa avaliação.</p>
                     </div>
 
                     <div>
                       <p class="font-semibold text-text-primary mb-1 mt-2">🟨 O que eu fiz</p>
 
                       <p class="mb-4">
-                        Criei um sistema de aventuras sazonais, com narrativas temáticas e recompensas por tempo limitado, independente do metaverso principal.
+                        Criei um sistema de aventuras especiais, com narrativas temáticas e recompensas por tempo
+                        limitado, independente do metaverso principal.
                       </p>
 
                       <p class="mb-4">
-                        A Ilha do Origami foi o primeiro mapa construído como uma aventura completa, sem telas de carregamento.
+                        A Ilha do Origami foi o primeiro mapa construído como uma aventura completa, sem telas de
+                        carregamento entre diferentes ilhas.
                       </p>
 
                       <p class="mb-2">Para chegar nisso, eu:</p>
 
                       <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                        <li>Criei uma água sem necessidade de sprite usando engine</li>
-                        <li>Criei um sistema de transporte conectando ilhas distantes</li>
+                        <li>Criei uma água usando a engine, sem necessidade de sprites animadas</li>
+                        <li>Criei um sistema de transporte sem loading conectando ilhas distantes</li>
                         <li>Mudanças no cenário conforme a progressão das quests</li>
-                        <li>Implementei um sistema de recompensas com itens exclusivos, temáticos e por tempo limitado</li>
+                        <li>Implementei um sistema de recompensas com itens exclusivos, temáticos e por tempo limitado </li>
                       </ul>
                     </div>
 
                     <div>
-                      <p class="font-semibold text-text-primary mb-1 mt-2">🟩 Impacto (com base no feedback dos jogadores)</p>
+                      <p class="font-semibold text-text-primary mb-1 mt-2">
+                        🟩 Impacto (baseado no feedback dos jogadores)
+                      </p>
                       <ul class="list-disc pl-5 space-y-1 text-[16px] mb-1">
                         <li>O evento aumentou bastante o engajamento</li>
                         <li>Sem telas de carregamento, o ritmo e a imersão melhoraram</li>
-                        <li>Recompensas limitadas criaram urgência e motivação</li>
-                        <li>Origami virou caso de sucesso para novas aventuras</li>
+                        <li>Recompensas limitadas criaram senso de urgência e motivação</li>
+                        <li>Origami virou caso de sucesso para outras aventuras</li>
                       </ul>
                     </div>
                   </div>
@@ -458,7 +471,7 @@ const getLinkIcon = (label: string) => {
         <div class="flex items-center gap-4 my-3" data-animate="fade-up">
           <span class="flex-1 h-px bg-border-default"></span>
           <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-            Outras contribuições de design
+            Outras contribuições
           </span>
           <span class="flex-1 h-px bg-border-default"></span>
         </div>
@@ -472,7 +485,7 @@ const getLinkIcon = (label: string) => {
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
               <img src="/img/tindin/itensmap.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-              <p class="text-sm font-semibold text-text-primary mb-3">Base de dados de assets</p>
+              <p class="text-sm font-semibold text-text-primary mb-3">Banco de Dados de Assets [MongoDB]</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
@@ -494,7 +507,7 @@ const getLinkIcon = (label: string) => {
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
               <img src="/img/tindin/buymechanics.webp" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-              <p class="text-sm font-semibold text-text-primary mb-3">Planejamento do núcleo do jogo</p>
+              <p class="text-sm font-semibold text-text-primary mb-3">Planejamento do Coreloop do Jogo</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
@@ -503,7 +516,7 @@ const getLinkIcon = (label: string) => {
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Conexão entre decisões e condições</span>
+                  <span>Relação entre decisões e condições dos jogadores</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
@@ -516,7 +529,7 @@ const getLinkIcon = (label: string) => {
             <div class="bg-bg-card border border-border-default rounded-2xl p-5">
               <img src="/img/tindin/fluxgram.avif" class="w-full h-40 object-cover rounded-xl mb-4" />
 
-              <p class="text-sm font-semibold text-text-primary mb-3">Documentação de design</p>
+              <p class="text-sm font-semibold text-text-primary mb-3">Documentação dos Projetos</p>
 
               <ul class="space-y-2 text-sm text-text-secondary">
                 <li class="flex items-start gap-3">
@@ -529,106 +542,107 @@ const getLinkIcon = (label: string) => {
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-coral flex-shrink-0"></span>
-                  <span>Atualizações de documentação junto com as iterações de design</span>
+                  <span>Atualizações de documentação junto com as iterações e desenvolvimento</span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-  </main>
-  <Footer />
+    </section>
+    <Footer />
 
-  <script>
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-    gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
-      const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
+      document.querySelectorAll('[data-animate="fade-up"]').forEach((el) => {
+        const delay = parseInt(el.getAttribute('data-delay') || '0') / 1000;
 
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        delay,
-        ease: 'power2.out',
-      });
-    });
-  </script>
-
-  <script>
-    const setupSlider = (id, intervalMs = 45000) => {
-      const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
-      const prevBtn = document.querySelector(`[data-prev="${id}"]`);
-      const nextBtn = document.querySelector(`[data-next="${id}"]`);
-      const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
-      const container = document.querySelector(`[data-slider="${id}"]`);
-
-      if (!slides.length) return;
-
-      let index = 0;
-      let timer = null;
-
-      const render = (newIndex) => {
-        index = (newIndex + slides.length) % slides.length;
-
-        slides.forEach((el, i) => {
-          el.classList.toggle('opacity-100', i === index);
-          el.classList.toggle('opacity-0', i !== index);
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          delay,
+          ease: 'power2.out',
         });
-
-        dots.forEach((d, i) => {
-          d.classList.toggle('bg-accent-coral', i === index);
-          d.classList.toggle('bg-bg-card/60', i !== index);
-        });
-      };
-
-      const start = () => {
-        stop();
-        timer = setInterval(() => render(index + 1), intervalMs);
-      };
-
-      const stop = () => {
-        if (timer) clearInterval(timer);
-        timer = null;
-      };
-
-      prevBtn?.addEventListener('click', () => {
-        render(index - 1);
-        start();
       });
-      nextBtn?.addEventListener('click', () => {
-        render(index + 1);
-        start();
-      });
+    </script>
 
-      dots.forEach((d) => {
-        d.addEventListener('click', () => {
-          const i = parseInt(d.getAttribute('data-index') || '0', 10);
-          render(i);
+    <script>
+      const setupSlider = (id, intervalMs = 45000) => {
+        const slides = Array.from(document.querySelectorAll(`img[data-slide="${id}"]`));
+        const prevBtn = document.querySelector(`[data-prev="${id}"]`);
+        const nextBtn = document.querySelector(`[data-next="${id}"]`);
+        const dots = Array.from(document.querySelectorAll(`button[data-dot="${id}"]`));
+        const container = document.querySelector(`[data-slider="${id}"]`);
+
+        if (!slides.length) return;
+
+        let index = 0;
+        let timer = null;
+
+        const render = (newIndex) => {
+          index = (newIndex + slides.length) % slides.length;
+
+          slides.forEach((el, i) => {
+            el.classList.toggle('opacity-100', i === index);
+            el.classList.toggle('opacity-0', i !== index);
+          });
+
+          dots.forEach((d, i) => {
+            d.classList.toggle('bg-accent-coral', i === index);
+            d.classList.toggle('bg-bg-card/60', i !== index);
+          });
+        };
+
+        const start = () => {
+          stop();
+          timer = setInterval(() => render(index + 1), intervalMs);
+        };
+
+        const stop = () => {
+          if (timer) clearInterval(timer);
+          timer = null;
+        };
+
+        prevBtn?.addEventListener('click', () => {
+          render(index - 1);
           start();
         });
+        nextBtn?.addEventListener('click', () => {
+          render(index + 1);
+          start();
+        });
+
+        dots.forEach((d) => {
+          d.addEventListener('click', () => {
+            const i = parseInt(d.getAttribute('data-index') || '0', 10);
+            render(i);
+            start();
+          });
+        });
+
+        container?.addEventListener('mouseenter', stop);
+        container?.addEventListener('mouseleave', start);
+
+        render(0);
+        start();
+      };
+
+      // auto-init: pega todos os sliders da página
+      document.querySelectorAll('[data-slider]').forEach((el) => {
+        const id = el.getAttribute('data-slider');
+        if (id) setupSlider(id);
+        //if (id) setupSlider(id, 2000);
       });
-
-      container?.addEventListener('mouseenter', stop);
-      container?.addEventListener('mouseleave', start);
-
-      render(0);
-      start();
-    };
-
-    // auto-init: pega todos os sliders da página
-    document.querySelectorAll('[data-slider]').forEach((el) => {
-      const id = el.getAttribute('data-slider');
-      if (id) setupSlider(id);
-      //if (id) setupSlider(id, 2000);
-    });
-  </script>
-</BaseLayout>
+    </script>
+  </main></BaseLayout
+>

@@ -34,14 +34,6 @@ const game = {
   ],
 
   resp_midia: '4x8_TYs5_A8',
-
-  responsibilities: [
-    'Led game design delivery (documentation, planning, and team coordination)',
-    'Tech design alignment (feasibility, adapting mechanics to Phaser/platform constraints)',
-    'Designed all four adventures (level structure, pacing, progression)',
-    'Guided UI/UX adaptation for the remaster (flows, readability, interaction beats)',
-    'Cataloged and remastered 150+ assets for reuse in the new build',
-  ],
   role: 'Lead Game Designer · Tech Design · Level Designer',
 };
 
@@ -183,28 +175,26 @@ const getLinkIcon = (label: string) => {
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟥 O Problema</p>
                   <p>
-                    O jogo precisava continuar simples e amigável para celular, mas ainda assim oferecer profundidade e
-                    desafio crescente.
+                    O jogo precisava ser simples e amigável para celular, sem perder profundidade e desafio crescente.
                   </p>
-                  <p>
-                    O gameplay central dependia totalmente de padrões de comportamento dos inimigos. A variedade e a
-                    progressão precisavam surgir da lógica de movimento, e não de mecânicas complexas.
+                  <p class="mt-1">
+                    O coreloop dependia totalmente de padrões de comportamento dos inimigos. A variedade e a
+                    progressão precisavam surgir da movimentação, e não de mecânicas complexas.
                   </p>
                 </div>
 
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟨 O Que Fiz</p>
-                  <p class="mb-2">Desenhei e implementei todos os sistemas de combate e os comportamentos dos inimigos.</p>
+                  <p class="mb-2">Sistemas de combate e os comportamentos dos inimigos.</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Criei a lógica de spawn de inimigos e o escalonamento de dificuldade</li>
-                    <li>Desenhei mecânicas únicas de chefes com vulnerabilidades baseadas em padrões</li>
+                    <li>Criei a lógica de spawn de inimigos e curva de dificuldade</li>
                     <li>Implementei mudanças de comportamento baseadas em vida e lógica de escalada</li>
                     <li>Montei state machines para inimigos, chefes e gatilhos de eventos</li>
                   </ul>
 
-                  <p class="mb-2 mt-5">Cada chefe introduzia uma mecânica distinta:</p>
+                  <p class="mb-2 mt-5">Boss Fights únicas:</p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
-                    <li>Janelas de vulnerabilidade baseadas em tempo</li>
+                    <li>Janelas de vulnerabilidade úniacs por boss</li>
                     <li>Manipulação de visibilidade</li>
                     <li>Ataques de mergulho baseados em reação</li>
                     <li>Agressividade escalonada a partir de limites de HP</li>
@@ -300,7 +290,7 @@ const getLinkIcon = (label: string) => {
             <!-- Text -->
             <div data-animate="fade-up">
               <h3 class="text-xl md:text-2xl font-bold text-text-primary mb-0">
-                Implementação de Sistemas e Arquitetura de Gameplay
+                Implementação de Sistemas e Arquitetura
               </h3>
               <!-- Highlight Subtitle -->
               <p
@@ -312,14 +302,16 @@ const getLinkIcon = (label: string) => {
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟥 O Problema</p>
                   <p>
-                    Como solo dev, todos os sistemas de gameplay precisavam ser modulares e fáceis de manter para suportar
-                    iterações rápidas em um cronograma curto.
+                    Como solo dev, todos os sistemas de gameplay precisavam ser modulares e fáceis de manter para
+                    suportar iterações rápidas em um cronograma curto.
                   </p>
                 </div>
 
                 <div>
                   <p class="font-semibold text-text-primary mb-1">🟨 O Que Fiz</p>
-                  <p class="mb-2">Desenhei e implementei todos os sistemas de combate e os comportamentos dos inimigos.</p>
+                  <p class="mb-2">
+                    Criei e implementei todos os sistemas de combate e os comportamentos dos inimigos.
+                  </p>
                   <ul class="list-disc pl-5 space-y-1 text-[16px] mb-2">
                     <li>Construí sistemas de movimento e atributos do jogador</li>
                     <li>Desenhei rotinas de spawn para inimigos e power ups</li>
@@ -348,7 +340,7 @@ const getLinkIcon = (label: string) => {
     <div class="flex items-center gap-4 my-3" data-animate="fade-up">
       <span class="flex-1 h-px bg-border-default"></span>
       <span class="text-xs font-semibold text-text-muted uppercase tracking-widest whitespace-nowrap">
-        Outras Contribuições de Design
+        Outras contribuições
       </span>
       <span class="flex-1 h-px bg-border-default"></span>
     </div>
