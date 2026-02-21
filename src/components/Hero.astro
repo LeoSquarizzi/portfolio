@@ -1,10 +1,33 @@
 ---
 import Button from './Button.astro';
 
-const stats = [
-  { value: '5+', label: 'Years Experience' },
-  { value: '12+', label: 'Projects' },
+const isPT = Astro.url.pathname.startsWith('/pt');
 
+const t = isPT
+  ? {
+      role: 'Game Designer & Game Developer',
+      bio1:
+        'Game Designer com formação em Jogos Digitais e pós-graduação em Jogos e Gamificação. Com anos de experiência em design de sistemas, progressão e fluxos do jogador, com prática em desenvolvimento em protótipos, projetos indies, mobile e educacionais.',
+      bio2: 'Foco em sistemas de jogo, design de progressão e experiência do jogador.',
+      location: 'Localizado em São Paulo, Brasil',
+      ctaWork: 'Ver meus projetos',
+      statsYears: 'Anos de Experiência',
+      statsProjects: 'Projetos',
+    }
+  : {
+      role: 'Game Designer & Game Developer',
+      bio1:
+        'Game Designer with a degree in Digital Games and a postgraduate background in Games and Gamification. With years of experience designing game systems, progression, and player flows, with development experience in prototypes, indies, mobile and educational projects.',
+      bio2: 'Focused on game systems, progression design, and player experience.',
+      location: 'Based in São Paulo, Brazil',
+      ctaWork: 'See My Work',
+      statsYears: 'Years Experience',
+      statsProjects: 'Projects',
+    };
+
+const stats = [
+  { value: '5+', label: t.statsYears },
+  { value: '12+', label: t.statsProjects },
 ];
 ---
 
@@ -45,20 +68,19 @@ const stats = [
               Leonardo 'Flaywint' Squarizzi
             </h3>
             <p class="text-accent-coral font-medium mb-3">
-              Game Designer & Game Developer
+              {t.role}
             </p>
             <p class="text-text-secondary mb-4 text-xs md:text-sm leading-relaxed text-justify">
-              Game Designer with a degree in Digital Games and a postgraduate background in Games and Gamification. 
-              Over 5 years of experience designing game systems, progression, and player flows, with hands-on development experience in indie and educational projects.
+              {t.bio1}
             </p>
             <p class="text-text-secondary mb-1 text-xs md:text-sm leading-relaxed text-justify">
-              Focused on game systems, progression design, and player experience.    
+              {t.bio2}
             </p>
 
             <!-- Location -->
             <div class="flex items-center gap-2 text-text-muted mb-4 text-sm justify-center md:justify-start">
               <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0"></i>
-              <span>Based in São Paulo, Brazil</span>
+              <span>{t.location}</span>
             </div>
 
             <!-- Social Links -->
@@ -95,7 +117,7 @@ const stats = [
       <!-- CTAs -->
       <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4 mb-12" data-animate="fade-up" data-delay="400">
         <Button href="#projects" variant="primary" size="lg">
-          See My Work
+          {t.ctaWork}
         </Button>
       </div>
 

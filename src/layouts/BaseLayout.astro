@@ -22,10 +22,12 @@ const siteUrl = 'https://leosquarizzi.com';
 const currentPath = Astro.url.pathname;
 const fullUrl = canonicalUrl || `${siteUrl}${currentPath}`;
 const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+const isPT = Astro.url.pathname.startsWith('/pt');
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={isPT ? 'pt-BR' : 'en'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

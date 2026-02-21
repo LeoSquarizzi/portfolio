@@ -1,5 +1,18 @@
 ---
 const currentYear = new Date().getFullYear();
+const isPT = Astro.url.pathname.startsWith('/pt');
+
+const t = isPT
+  ? {
+      tagline: 'Nada é mais inspirador do que criar algo novo.',
+      copyright: `© ${currentYear} Portfólio de Leonardo Squarizzi. Todos os direitos reservados.`,
+      contact: 'Contato',
+    }
+  : {
+      tagline: 'Nothing is more inspiring than creating something new.',
+      copyright: `© ${currentYear} Portfolio by Leonardo Squarizzi. All rights reserved.`,
+      contact: 'Contact',
+    };
 
 const projectLinks = [
   { href: 'https://github.com/leosquarizzi/', label: 'InAppBrowser' },
@@ -15,13 +28,17 @@ const resourceLinks = [
 
 const connectLinks = [
   { href: 'https://github.com/leosquarizzi', label: 'GitHub' },
-  { href: 'mailto:jdnichollsc@gmail.com', label: 'Contact' },
+  { href: 'mailto:jdnichollsc@gmail.com', label: t.contact },
 ];
 
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/leonardo-squarizzi', icon: 'linkedin', label: 'LinkedIn' },
   { href: 'https://github.com/leosquarizzi', icon: 'github', label: 'GitHub' },
-  { href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.', icon: 'mail', label: 'Email' },
+  {
+    href: 'https://mail.google.com/mail/?view=cm&to=leosquarizzi@gmail.com&su=Awesome%20work&body=Hi%20Leo,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20a%20potential%20collaboration.%0A%0ALet%E2%80%99s%20connect.',
+    icon: 'mail',
+    label: 'Email',
+  },
 ];
 ---
 
@@ -32,11 +49,11 @@ const socialLinks = [
       <!-- Logo & Tagline -->
       <div class="max-w-sm">
         <p class="text-text-secondary text-sm md:text-base whitespace-nowrap">
-          Nothing is more inspiring than creating something new.
+          {t.tagline}
         </p>
       </div>
 
-      <!-- Connect Section 
+      <!-- Connect Section
       <div>
         <h3 class="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">
           Connect
@@ -61,7 +78,7 @@ const socialLinks = [
     <!-- Bottom Section -->
     <div class="pt-3 md:pt-4 border-t border-border-default flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-text-muted text-xs md:text-sm">
-        &copy; {currentYear} Portfolio by Leonardo Squarizzi. All rights reserved.
+        {t.copyright}
       </p>
 
       <!-- Social Icons -->

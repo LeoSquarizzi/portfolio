@@ -16,10 +16,14 @@ const isPT = Astro.url.pathname.startsWith('/pt');
 const langPrefix = isPT ? '/pt' : '';
 
 // Base nav links (unprefixed)
+const t = isPT
+  ? { games: 'Jogos', about: 'Sobre', contact: 'Contato', langLabel: 'Alternar idioma', socials: 'Links' }
+  : { games: 'Games', about: 'About', contact: 'Contact', langLabel: 'Language toggle', socials: 'Links' };
+
 const baseNavLinks = [
-  { href: '/games', label: 'Games', id: 'games' },
-  { href: '/about', label: 'About', id: 'about' },
-  { href: '/contact', label: 'Contact', id: 'contact' },
+  { href: '/games', label: t.games, id: 'games' },
+  { href: '/about', label: t.about, id: 'about' },
+  { href: '/contact', label: t.contact, id: 'contact' },
 ];
 
 // Prefixed nav links (match current language route)
@@ -66,11 +70,11 @@ const socialLinks = [
 
     <!-- Actions -->
     <div class="flex items-center gap-3">
-      <!-- Language Toggle -->
+      <!-- Language Toggle (desktop/tablet only) -->
       <div
         id="lang-toggle"
         class="hidden sm:flex items-center rounded-lg border border-border-default bg-bg-hover p-1"
-        aria-label="Language toggle"
+        aria-label={t.langLabel}
       >
         <button
           type="button"
@@ -97,27 +101,7 @@ const socialLinks = [
         </button>
       </div>
 
-      <!-- Theme Toggle 
-      <button
-        data-dragon-trigger
-        class="w-10 h-10 rounded-full bg-bg-hover flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-tertiary transition-all duration-200"
-        aria-label="Toggle theme"
-      >
-        <i class="w-5 h-5">🐉</i>
-      </button>-->
-
-      <!-- GitHub Link 
-      <a
-        href="https://github.com/leosquarizzi"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-hover border border-border-default text-text-secondary hover:text-text-primary hover:border-accent-coral transition-all duration-200"
-      >
-        <i data-lucide="github" class="w-4 h-4"></i>
-        <span class="text-sm font-medium">{starsDisplay}</span>
-      </a>-->
-
-      <!-- Contact Icons -->
+      <!-- Contact Icons (desktop) -->
       <div class="hidden sm:flex items-center gap-2">
         {socialLinks.map((link) => (
           <a
@@ -153,6 +137,35 @@ const socialLinks = [
     class="md:hidden fixed inset-0 top-[72px] bg-black transform translate-x-full transition-transform duration-300 ease-smooth z-modal"
   >
     <nav class="flex flex-col p-6 gap-2">
+      <!-- Mobile Language Toggle (inside drawer) -->
+      <div class="mb-4">
+        <div class="flex items-center rounded-lg border border-border-default bg-bg-hover p-1" aria-label={t.langLabel}>
+          <button
+            type="button"
+            data-lang="en"
+            class:list={[
+              'flex-1 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200',
+              !isPT ? 'bg-bg-card text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary',
+            ]}
+            onclick="toggleLang('en')"
+          >
+            EN
+          </button>
+
+          <button
+            type="button"
+            data-lang="pt"
+            class:list={[
+              'flex-1 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200',
+              isPT ? 'bg-bg-card text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary',
+            ]}
+            onclick="toggleLang('pt')"
+          >
+            PT
+          </button>
+        </div>
+      </div>
+
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -161,17 +174,23 @@ const socialLinks = [
           {link.label}
         </a>
       ))}
+
       <hr class="border-border-default my-4" />
-      <a
-        href="https://github.com/leosquarizzi"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-3 py-4 px-4 text-lg font-medium text-white hover:text-accent-coral rounded-lg transition-colors duration-200"
-      >
-        <i data-lucide="github" class="w-5 h-5"></i>
-        GitHub
-        <i data-lucide="arrow-right" class="w-4 h-4 ml-auto"></i>
-      </a>
+
+      <p class="px-4 text-sm text-text-secondary/80 uppercase tracking-wider">{t.socials}</p>
+
+      {socialLinks.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-nav-link flex items-center gap-3 py-4 px-4 text-lg font-medium text-white hover:text-accent-coral hover:bg-bg-hover rounded-lg transition-colors duration-200"
+        >
+          <i data-lucide={link.icon} class="w-5 h-5"></i>
+          {link.label}
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-auto"></i>
+        </a>
+      ))}
     </nav>
   </div>
 </header>
@@ -225,7 +244,7 @@ const socialLinks = [
   mobileMenuBtn?.addEventListener('click', toggleMenu);
   mobileOverlay?.addEventListener('click', toggleMenu);
 
-  // Close menu on navigation link click
+  // Close menu on ANY mobile navigation link click (internal + socials)
   document.querySelectorAll('.mobile-nav-link').forEach((link) => {
     link.addEventListener('click', () => {
       if (isMenuOpen) toggleMenu();
