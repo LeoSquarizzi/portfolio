@@ -18,7 +18,7 @@
 | ion-phaser | 252+ | Phaser/Ionic |
 
 ### Founder
-**Juan David Nicholls** - 8+ years experience in web, mobile, and game development
+**Leonardo Squarizzi** - 5+ years experience in game development.
 
 ---
 
@@ -97,4 +97,3 @@ proyecto26-website/
 ---
 
 *Last updated: January 2025*
-*Design by: Claude + Juan David Nicholls*
