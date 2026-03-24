@@ -336,7 +336,7 @@ Display one game prominently with a preview (GIF or video loop).
 
 #### Layout
 
-```
+<!-- ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                                                                          │
 │                         Meet the Founder                                 │
@@ -361,7 +361,7 @@ Display one game prominently with a preview (GIF or video loop).
 │                            [LinkedIn] [GitHub] [Twitter] [SO]           │
 │                                                                          │
 └──────────────────────────────────────────────────────────────────────────┘
-```
+``` -->
 
 #### Content
 

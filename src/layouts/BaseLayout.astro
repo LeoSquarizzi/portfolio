@@ -118,12 +118,17 @@ const isPT = Astro.url.pathname.startsWith('/pt');
 
     <!-- Initialize Lucide icons -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      function initLucideIcons() {
         if (window.lucide) {
           window.lucide.createIcons();
         }
-      });
+      }
+
+      document.addEventListener('DOMContentLoaded', initLucideIcons);
+      document.addEventListener('astro:page-load', initLucideIcons);
     </script>
+    
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 
     <script>
       import { gsap } from 'gsap';

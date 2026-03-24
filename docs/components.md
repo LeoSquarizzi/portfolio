@@ -428,7 +428,7 @@ Displays service/capability areas.
 
 ## Team Member
 
-```
+<!-- ```
 ┌──────────────────────────────────────────────────────┐
 │                                                      │
 │  ┌──────────────┐                                    │
@@ -445,7 +445,7 @@ Displays service/capability areas.
 │                     [LinkedIn] [GitHub] [Twitter]    │
 │                                                      │
 └──────────────────────────────────────────────────────┘
-```
+``` -->
 
 **Specifications:**
 - Layout: Flex row (desktop), stack (mobile)
