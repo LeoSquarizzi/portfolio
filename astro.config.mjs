@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -12,14 +14,19 @@ export default defineConfig({
       lastmod: new Date(),
     })
   ],
+
   site: 'https://proyecto26.com',
   output: 'static',
+
   build: {
     assets: 'assets'
   },
+
   vite: {
     build: {
       cssMinify: true,
     }
-  }
+  },
+
+  adapter: cloudflare()
 });

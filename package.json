@@ -7,12 +7,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "deploy": "npm run build && gh-pages -d dist",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
     "deploy:preview": "npm run build && gh-pages -d dist -b gh-pages-preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "12",
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/tailwind": "^6.0.0",
     "astro": "^5.0.0",
@@ -26,6 +28,7 @@
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "wrangler": "^4.110.0"
   }
 }
